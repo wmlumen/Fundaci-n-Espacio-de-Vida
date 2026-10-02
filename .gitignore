@@ -1,0 +1,18 @@
+# Documentos sensibles y archivos binarios institucionales
+*.pdf
+*.docx
+*.doc
+*.xls
+*.xlsx
+
+# Sellos y firmas institucionales
+*sello*
+*firma*
+
+# Archivos de configuración y claves
+.env
+*.env.*
+*.key
+*.pem
+*.crt
+*.pfx
