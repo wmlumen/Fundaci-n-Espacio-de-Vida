@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Espacio de Vida - Sitio Web Institucional & Portal Oficial</title>
+    <title>Fundación Espacio de Vida — Sitio Web Oficial & Presentación Institucional</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
-
-        /* =========================================================
-           VARIABLES CSS3 Y SISTEMA DE DISEÑO RESPONSIVO
-           ========================================================= */
         :root {
             --primary: #2d6a4f;
             --primary-dark: #1b4332;
@@ -19,8 +15,6 @@
             --gold-light: #fffbea;
             --red: #d90429;
             --blue: #0038a8;
-
-            /* Light Mode Variables */
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --bg-nav: rgba(255, 255, 255, 0.95);
@@ -32,105 +26,11 @@
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
             --shadow-md: 0 12px 28px -6px rgba(0,0,0,0.08);
             --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.12);
-
             --radius-lg: 20px;
             --radius-md: 12px;
             --radius-sm: 8px;
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        /* =========================================================
-           ANIMACIONES Y TRANSICIONES MODERNAS (MODERN UI TRANSITIONS)
-           ========================================================= */
-        a, button, input, select, textarea {
-            transition: var(--transition-smooth);
-        }
-
-        /* Revelación suave al hacer Scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-right.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.92);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal-scale.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Hover 3D en Tarjetas y Bloques */
-        .map-info-pane, .contact-info-box, .contact-form-box, .seal-box, .stat-card, .program-card {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
-        }
-
-        .map-info-pane:hover, .contact-info-box:hover, .contact-form-box:hover, .seal-box:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
-        }
-
-        /* Destello Shimmer en Botones */
-        .btn-hero-primary {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-        }
-
-        .btn-hero-primary::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-            transform: skewX(-20deg);
-            transition: none;
-        }
-
-        .btn-hero-primary:hover::after {
-            left: 200%;
-            transition: left 0.8s ease-in-out;
-        }
-
-        .btn-hero-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px -6px rgba(45, 106, 79, 0.4);
-        }
-
         [data-theme="dark"] {
             --bg-body: #090d16;
             --bg-card: #0f172a;
@@ -144,1629 +44,296 @@
             --shadow-md: 0 12px 28px -6px rgba(0,0,0,0.5);
             --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.7);
         }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        /* Scroll Progress Line */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-light), var(--gold), var(--red));
-            z-index: 10000;
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-
-        /* Toast UX Notification */
-        .toast-notification {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #0f172a;
-            color: #ffffff;
-            border: 1px solid var(--primary-light);
-            padding: 14px 22px;
-            border-radius: var(--radius-md);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            font-size: 13.5px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 9999;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: var(--transition-smooth);
-            pointer-events: none;
-        }
-
-        .toast-notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Header Navbar */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-nav);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: var(--transition-smooth);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 12px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .brand-logo img {
-            height: 44px;
-            width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        .brand-text h1 {
-            font-size: 17px;
-            font-weight: 800;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.1;
-        }
-
-        .brand-text span {
-            font-size: 10.5px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-heading);
-            font-size: 14px;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: var(--radius-sm);
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary);
-            background: rgba(45, 106, 79, 0.08);
-        }
-
-        /* Dropdown Menu */
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 230px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            padding: 8px 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: var(--transition-smooth);
-            list-style: none;
-        }
-
-        .nav-item:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 10px 18px;
-            color: var(--text-body);
-            text-decoration: none;
-            font-size: 13.5px;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-        }
-
-        .dropdown-menu a:hover {
-            background: var(--soft-green);
-            color: var(--primary);
-            padding-left: 22px;
-        }
-
-        [data-theme="dark"] .dropdown-menu a:hover {
-            background: rgba(82, 183, 136, 0.15);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .theme-toggle-btn {
-            background: var(--border-color);
-            border: none;
-            color: var(--text-heading);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: var(--transition-smooth);
-        }
-
-        .theme-toggle-btn:hover {
-            transform: rotate(30deg) scale(1.05);
-            background: var(--primary-light);
-            color: #fff;
-        }
-
-        .btn-cta-donar {
-            background: linear-gradient(135deg, var(--gold) 0%, #a37c1a 100%);
-            color: #ffffff;
-            padding: 10px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 13.5px;
-            font-weight: 700;
-            box-shadow: 0 4px 14px rgba(197, 155, 39, 0.35);
-            transition: var(--transition-smooth);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-cta-donar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(197, 155, 39, 0.5);
-            filter: brightness(1.08);
-        }
-
-        /* HERO SECTION CON FOTO DE FONDO ALTA RESOLUCIÓN */
-        .hero {
-            padding: 170px 24px 110px 24px;
-            background: linear-gradient(135deg, rgba(9, 13, 22, 0.88) 0%, rgba(27, 67, 50, 0.85) 60%, rgba(15, 23, 42, 0.9) 100%), 
-                        url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 50px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.14);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 12.5px;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .hero-title {
-            font-size: 46px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-title span {
-            background: linear-gradient(90deg, #52b788, #c59b27);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 35px;
-            max-width: 620px;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn-hero-primary {
-            background: var(--primary-light);
-            color: #05190e;
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            box-shadow: 0 8px 24px rgba(82, 183, 136, 0.35);
-        }
-
-        .btn-hero-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(82, 183, 136, 0.5);
-            background: #ffffff;
-        }
-
-        .btn-hero-secondary {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: #ffffff;
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            backdrop-filter: blur(8px);
-        }
-
-        .btn-hero-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
-        }
-
-        .hero-card-widget {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-        }
-
-        .hero-card-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-            border-bottom: 1px solid rgba(255,255,255,0.12);
-            padding-bottom: 16px;
-        }
-
-        .hero-card-header img {
-            width: 65px;
-            height: auto;
-            filter: drop-shadow(0 4px 10px rgba(197, 155, 39, 0.4));
-        }
-
-        .hero-card-info h3 {
-            font-size: 18px;
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .hero-card-info p {
-            font-size: 12.5px;
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .hero-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .hero-stat-box {
-            background: rgba(255, 255, 255, 0.06);
-            padding: 16px;
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .hero-stat-box strong {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--gold);
-            display: block;
-        }
-
-        .hero-stat-box span {
-            font-size: 11.5px;
-            color: rgba(255, 255, 255, 0.85);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* SECCIONES Y TARJETAS */
-        section {
-            padding: 90px 24px;
-        }
-
-        .section-alt {
-            background-color: var(--bg-section-alt);
-        }
-
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header-center {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 60px auto;
-        }
-
-        .section-tag {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 800;
-            color: var(--primary);
-            background: rgba(45, 106, 79, 0.1);
-            border: 1px solid rgba(45, 106, 79, 0.2);
-            padding: 5px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 34px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 16px;
-            line-height: 1.25;
-        }
-
-        .section-desc {
-            font-size: 16px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* NOSOTROS GRID */
-        .grid-3col {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        .info-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-smooth);
-        }
-
-        .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-light);
-        }
-
-        .info-card-img {
-            height: 180px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .info-card-body {
-            padding: 28px;
-        }
-
-        .info-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 12px;
-        }
-
-        .info-card p {
-            font-size: 14.5px;
-            color: var(--text-body);
-            line-height: 1.65;
-            margin-bottom: 20px;
-        }
-
-        .info-card-link {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition-smooth);
-        }
-
-        .info-card-link:hover {
-            color: var(--primary-dark);
-            gap: 10px;
-        }
-
-        /* NUESTROS PROYECTOS GRID */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .project-img {
-            height: 180px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 24px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-tag {
-            font-size: 11px;
-            font-weight: 800;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
-
-        .project-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 10px;
-        }
-
-        .project-desc {
-            font-size: 13.5px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 16px;
-            flex-grow: 1;
-        }
-
-        /* GALERÍA DE FOTOS GRID */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            height: 240px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-smooth);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.88) 100%);
-            padding: 20px;
-            color: #ffffff;
-            font-size: 13.5px;
-            font-weight: 600;
-        }
-
-        /* EXPERIENCIA CARDS */
-        .exp-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        .exp-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-smooth);
-        }
-
-        .exp-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
-
-        .exp-card-img {
-            height: 170px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .exp-card-body {
-            padding: 24px;
-        }
-
-        .exp-title {
-            font-size: 19px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 10px;
-        }
-
-        .exp-desc {
-            font-size: 14px;
-            color: var(--text-body);
-            line-height: 1.6;
-        }
-
-        /* VOLUNTARIADO BANNER CON FOTO */
-        .voluntariado-banner {
-            background: linear-gradient(135deg, rgba(45, 106, 79, 0.92) 0%, rgba(27, 67, 50, 0.95) 100%),
-                        url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-            border-radius: var(--radius-lg);
-            padding: 60px 48px;
-            color: #ffffff;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .voluntariado-content h3 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .voluntariado-content p {
-            font-size: 16px;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.65;
-            margin-bottom: 28px;
-        }
-
-        /* CALCULADORA RSE */
-        .calculator-widget {
-            background: var(--bg-card);
-            border: 2px solid var(--primary-light);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-lg);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .calc-info h3 {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 12px;
-        }
-
-        .calc-info p {
-            font-size: 14.5px;
-            color: var(--text-body);
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .calc-form {
-            background: var(--bg-section-alt);
-            padding: 28px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13.5px;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 8px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            background: var(--bg-card);
-            color: var(--text-heading);
-            font-size: 15px;
-            font-weight: 600;
-            outline: none;
-            transition: var(--transition-smooth);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
-        }
-
-        .calc-results {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .calc-results div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13.5px;
-            color: var(--text-muted);
-        }
-
-        .calc-results strong {
-            font-size: 16px;
-            font-weight: 800;
-            color: var(--text-heading);
-        }
-
-        /* DONACIONES */
-        .donar-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .donar-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 36px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .donar-card h4 {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 16px;
-        }
-
-        .donar-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .donar-list li {
-            font-size: 14px;
-            color: var(--text-body);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .seal-box {
-            text-align: center;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 36px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .seal-box img {
-            width: 140px;
-            height: auto;
-            filter: drop-shadow(0 6px 12px rgba(197, 155, 39, 0.3));
-            margin-bottom: 16px;
-        }
-
-        /* MAPA INTERACTIVO DIRECTO ("DE UNA") */
-        .map-section-direct {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .map-grid-direct {
-            display: grid;
-            grid-template-columns: 1fr 2.2fr;
-        }
-
-        .map-info-pane {
-            padding: 36px;
-            background: var(--bg-card);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .map-iframe-box {
-            width: 100%;
-            height: 440px;
-            position: relative;
-        }
-
-        .map-iframe-box iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* CONTACTO FORM */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 40px;
-        }
-
-        .contact-info-box {
-            background: var(--primary-dark);
-            color: #ffffff;
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .contact-item-icon {
-            font-size: 22px;
-            color: var(--gold);
-        }
-
-        .contact-item h5 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .contact-item p {
-            font-size: 13.5px;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .contact-form-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* MODAL PREVISUALIZACIÓN */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition-smooth);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .modal-body-container {
-            width: 90%;
-            max-width: 900px;
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-        }
-
-        .modal-close-btn {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: var(--red);
-            color: #ffffff;
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: 700;
-            z-index: 10;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #090d16;
-            color: #94a3b8;
-            padding: 60px 24px 30px 24px;
-            border-top: 1px solid #1e293b;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        .tricolor-stripe-web {
-            height: 4px;
-            width: 120px;
-            background: linear-gradient(90deg, var(--red) 0%, #ffffff 50%, var(--blue) 100%);
-            border-radius: 2px;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25d366;
-            color: #ffffff;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
-        }
-
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 1024px) {
-            .hero-container, .calculator-widget, .donar-container, .contact-grid, .voluntariado-banner, .map-grid-direct {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grid-3col, .exp-grid, .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .map-iframe-box {
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-title {
-                font-size: 34px;
-            }
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif; background-color: var(--bg-body); color: var(--text-body); line-height: 1.6; overflow-x: hidden; transition: background-color 0.4s ease, color 0.4s ease; }
+        a, button, input, select, textarea { transition: var(--transition-smooth); }
+        .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--red), var(--gold), var(--blue)); z-index: 10000; width: 0%; transition: width 0.1s ease; }
+        .toast-notification { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: #ffffff; border: 1px solid var(--primary-light); padding: 14px 22px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.3); font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 10px; z-index: 9999; transform: translateY(100px); opacity: 0; transition: var(--transition-smooth); pointer-events: none; }
+        .toast-notification.show { transform: translateY(0); opacity: 1; }
+        header { position: fixed; top: 0; left: 0; right: 0; background: var(--bg-nav); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); z-index: 1000; }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo img { height: 46px; width: auto; }
+        .brand-text h1 { font-size: 18px; font-weight: 800; color: var(--text-heading); line-height: 1.1; }
+        .brand-text span { font-size: 11px; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-menu { display: flex; align-items: center; gap: 20px; list-style: none; }
+        .nav-link { text-decoration: none; color: var(--text-body); font-size: 13.5px; font-weight: 600; padding: 8px 10px; border-radius: var(--radius-sm); }
+        .nav-link:hover { color: var(--primary); background: rgba(45, 106, 79, 0.08); }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+        .theme-toggle-btn { background: var(--bg-section-alt); border: 1px solid var(--border-color); color: var(--text-heading); padding: 8px 12px; border-radius: var(--radius-md); cursor: pointer; font-size: 16px; }
+        .btn-cta-donar { background: linear-gradient(135deg, var(--red) 0%, #b00020 100%); color: #ffffff; font-weight: 700; font-size: 13.5px; padding: 10px 20px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(217, 4, 41, 0.3); display: inline-flex; align-items: center; gap: 6px; }
+        .btn-cta-donar:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(217, 4, 41, 0.5); }
+        .hero { padding: 140px 24px 70px 24px; background: radial-gradient(circle at 80% 20%, rgba(45, 106, 79, 0.12) 0%, transparent 60%); }
+        .hero-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--soft-green); color: var(--primary-dark); border: 1px solid var(--primary-light); padding: 6px 14px; border-radius: 50px; font-size: 12.5px; font-weight: 700; margin-bottom: 20px; }
+        .hero-title { font-size: 44px; font-weight: 900; color: var(--text-heading); line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-title span { color: var(--primary); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 16px; color: var(--text-body); margin-bottom: 30px; max-width: 620px; line-height: 1.7; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; }
+        .btn-hero-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #ffffff; font-weight: 700; padding: 14px 28px; border-radius: var(--radius-md); text-decoration: none; font-size: 14.5px; box-shadow: 0 10px 25px rgba(45, 106, 79, 0.3); display: inline-flex; align-items: center; gap: 8px; }
+        .btn-hero-secondary { background: var(--bg-card); color: var(--text-heading); border: 1px solid var(--border-color); font-weight: 700; padding: 14px 24px; border-radius: var(--radius-md); text-decoration: none; font-size: 14.5px; }
+        .hero-card-widget { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-lg); }
+        .hero-card-header { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; }
+        .hero-card-header img { height: 60px; width: auto; }
+        .hero-card-info h3 { font-size: 18px; font-weight: 800; color: var(--text-heading); }
+        .hero-card-info p { font-size: 12.5px; color: var(--text-muted); }
+        .hero-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .hero-stat-box { background: var(--bg-section-alt); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .hero-stat-box strong { display: block; font-size: 22px; font-weight: 900; color: var(--primary); }
+        .hero-stat-box span { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+        section { padding: 80px 24px; }
+        .section-alt { background-color: var(--bg-section-alt); }
+        .section-container { max-width: 1280px; margin: 0 auto; }
+        .section-header-center { text-align: center; max-width: 800px; margin: 0 auto 50px auto; }
+        .section-tag { font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
+        .section-title { font-size: 32px; font-weight: 900; color: var(--text-heading); margin-bottom: 14px; }
+        .section-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+        .grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .info-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-sm); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .info-card:hover { transform: translateY(-6px); }
+        .info-card h3 { font-size: 20px; font-weight: 800; color: var(--text-heading); margin-bottom: 12px; }
+        .info-card p { font-size: 14px; color: var(--text-body); line-height: 1.7; }
+        .feature-list { list-style: none; margin-top: 16px; }
+        .feature-list li { position: relative; padding-left: 26px; margin-bottom: 14px; font-size: 14px; color: var(--text-body); line-height: 1.6; }
+        .feature-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--primary); font-weight: 900; }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .project-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .project-card:hover { transform: translateY(-6px); }
+        .project-content { padding: 24px; }
+        .project-tag { font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.8px; display: block; margin-bottom: 6px; }
+        .project-title { font-size: 18px; font-weight: 800; color: var(--text-heading); margin-bottom: 10px; }
+        .project-desc { font-size: 13.5px; color: var(--text-body); line-height: 1.65; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .contact-info-box { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #ffffff; border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; justify-content: space-between; }
+        .contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+        .contact-item-icon { font-size: 20px; background: rgba(255,255,255,0.15); width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .contact-item h5 { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 2px; }
+        .contact-item p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+        .contact-form-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-sm); }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--text-heading); margin-bottom: 6px; }
+        .form-control { width: 100%; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-heading); font-size: 14px; }
+        .form-control:focus { outline: none; border-color: var(--primary); }
+        .map-section-direct { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); }
+        .map-iframe-box iframe { width: 100%; border: none; border-radius: var(--radius-md); }
+        footer { background: #090d16; color: #94a3b8; padding: 60px 24px 30px 24px; border-top: 1px solid #1e293b; }
+        .footer-container { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; font-size: 13px; }
+        .tricolor-stripe-web { height: 4px; width: 120px; background: linear-gradient(90deg, var(--red) 0%, #ffffff 50%, var(--blue) 100%); border-radius: 2px; }
+        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: #ffffff; width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); z-index: 999; text-decoration: none; }
+        @media (max-width: 1024px) { .hero-container, .contact-grid { grid-template-columns: 1fr; } .grid-3col, .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .nav-menu { display: none; } .grid-3col, .projects-grid { grid-template-columns: 1fr; } .hero-title { font-size: 34px; } }
     </style>
 </head>
 <body>
-
-    <!-- Scroll Progress Line -->
     <div id="scroll-progress"></div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast-notification">
-        <span>✅</span>
-        <span id="toast-text">Copiado al portapapeles</span>
-    </div>
-
-    <!-- Header Navbar -->
+    <div id="toast" class="toast-notification"><span>✅</span><span id="toast-text">Copiado al portapapeles</span></div>
     <header>
         <div class="nav-container">
             <a href="#inicio" class="brand-logo">
                 <img src="FORMULARIOS/logo_espacio_de_vida.png" alt="Fundación Espacio de Vida Logo">
                 <div class="brand-text">
                     <h1>Espacio de Vida</h1>
-                    <span>Fundación Sin Fines de Lucro</span>
+                    <span>Organización Sin Fines de Lucro &bull; 2013</span>
                 </div>
             </a>
-
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#nosotros" class="nav-link">Nosotros ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                        <li><a href="#equipo">Nuestro Equipo</a></li>
-                        <li><a href="#legales">Documentos Legales</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#proyectos" class="nav-link">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experiencia" class="nav-link">Experiencia ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#formativos">Procesos Formativos</a></li>
-                        <li><a href="#emprendimiento">Emprendimiento</a></li>
-                        <li><a href="#festivales">Festivales y Eventos</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#galeria" class="nav-link">Galería 📸</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#voluntariado" class="nav-link">Voluntariado</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#mapa" class="nav-link">Ubicación 📍</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contacto" class="nav-link">Contacto</a>
-                </li>
+                <li><a href="#somos" class="nav-link">Somos</a></li>
+                <li><a href="#mision-vision" class="nav-link">Misión y Visión</a></li>
+                <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
+                <li><a href="#como-ayudamos" class="nav-link">¿Cómo Ayudamos?</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Encuéntranos en...</a></li>
             </ul>
-
             <div class="nav-actions">
-                <button class="theme-toggle-btn" onclick="toggleTheme()" title="Cambiar Tema (Claro/Oscuro)">🌓</button>
-                <a href="#donar" class="btn-cta-donar">
-                    <span>❤️</span> Donar
-                </a>
+                <button class="theme-toggle-btn" onclick="toggleTheme()" title="Cambiar Tema">🌓</button>
+                <a href="#contacto" class="btn-cta-donar"><span>❤️</span> Apoyar Gran Obra</a>
             </div>
         </div>
     </header>
-
-    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-container">
             <div>
-                <div class="hero-badge">🏛️ Entidad Social con Respaldo Oficial &bull; RUC 80087692-0</div>
-                <h1 class="hero-title">Impulsamos el <span>Talento, la Cultura</span> y el Desarrollo Social</h1>
-                <p class="hero-subtitle">Somos una organización social comprometida con la promoción de talentos artísticos, capacitación técnica, emprendimiento e inclusión social en Paraguay.</p>
+                <div class="hero-badge">✨ Creada en 2013 &bull; Organización Sin Fines de Lucro</div>
+                <h1 class="hero-title">Fundación <span>Espacio de Vida</span></h1>
+                <p class="hero-subtitle">Trabajamos para desarrollar y apoyar a entidades y personas con necesidades para que tengan acceso y oportunidades para participar completamente en la vida social y cultural, no solamente concentrados en sus necesidades, sino principalmente enfocados en sus capacidades.</p>
                 <div class="hero-buttons">
-                    <a href="#proyectos" class="btn-hero-primary">Ver Proyectos 🚀</a>
-                    <a href="#voluntariado" class="btn-hero-secondary">Ser Voluntario 🤝</a>
-                    <a href="#rse" class="btn-hero-secondary" style="border-color: var(--gold); color: var(--gold);">Calculadora IRE (RSE) 📊</a>
+                    <a href="#proyectos" class="btn-hero-primary">Ver Acciones e Impacto Social 🚀</a>
+                    <a href="#como-ayudamos" class="btn-hero-secondary">¿Cómo Ayudamos? 🤝</a>
                 </div>
             </div>
-
             <div class="hero-card-widget">
                 <div class="hero-card-header">
-                    <img src="FORMULARIOS/logo_espacio_de_vida.png" alt="Sello Dorado Oficial">
+                    <img src="FORMULARIOS/logo_espacio_de_vida.png" alt="Logo Oficial Fundación Espacio de Vida">
                     <div class="hero-card-info">
                         <h3>Fundación Espacio de Vida</h3>
-                        <p>Decreto N° 1913/2014 &bull; Lambaré, Paraguay</p>
+                        <p>Fundada en 2013 &bull; Lambaré, Paraguay</p>
                     </div>
                 </div>
-                <!-- EXACT 4 STATS METRICS -->
                 <div class="hero-stats-grid">
-                    <div class="hero-stat-box">
-                        <strong>100%</strong>
-                        <span>Exento de IVA (Ley 1034/83)</span>
-                    </div>
-                    <div class="hero-stat-box">
-                        <strong>1%</strong>
-                        <span>Deducible en IRE (Ley 6380/19)</span>
-                    </div>
-                    <div class="hero-stat-box">
-                        <strong>+2.500</strong>
-                        <span>Beneficiarios Directos</span>
-                    </div>
-                    <div class="hero-stat-box">
-                        <strong>A4</strong>
-                        <span>Recibo Oficial Transparente</span>
-                    </div>
+                    <div class="hero-stat-box"><strong>2013</strong><span>Año de Creación</span></div>
+                    <div class="hero-stat-box"><strong>100%</strong><span>Enfoque en Capacidades</span></div>
+                    <div class="hero-stat-box"><strong>Infanto</strong><span>Juvenil e Inclusión</span></div>
+                    <div class="hero-stat-box"><strong>Lambaré</strong><span>Departamento Central</span></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Sección 1: Nosotros -->
-    <section id="nosotros">
+    <section id="somos">
         <div class="section-container">
             <div class="section-header-center">
-                <span class="section-tag">CONOCE NUESTRA FUNDACIÓN</span>
-                <h2 class="section-title">Nosotros</h2>
-                <p class="section-desc">Fundación Espacio de Vida trabaja de manera transparente e integral para fomentar el desarrollo cultural y social de las comunidades.</p>
+                <span class="section-tag">QUIÉNES SOMOS</span>
+                <h2 class="section-title">Somos</h2>
+                <p class="section-desc">La Fundación Espacio de Vida fue creada en 2013 como una organización sin fines de lucro. Trabaja para desarrollar y apoyar a entidades y personas con necesidades para que tengan acceso y oportunidades para participar completamente en la vida, social y cultural, no solamente concentrados en sus necesidades, sino principalmente enfocados en sus capacidades.</p>
             </div>
-
+        </div>
+    </section>
+    <section id="mision-vision" class="section-alt">
+        <div class="section-container">
+            <div class="section-header-center">
+                <span class="section-tag">PROPÓSITO INSTITUCIONAL</span>
+                <h2 class="section-title">Misión & Visión</h2>
+            </div>
+            <div class="grid-3col" style="grid-template-columns: 1fr 1fr;">
+                <div class="info-card">
+                    <span class="section-tag">NUESTRA MISIÓN</span>
+                    <h3>Misión</h3>
+                    <p>La Fundación Espacio de Vida tiene como misión la provisión de espacios y recursos que compensen las dificultades de las personas con capacidades diferentes que le favorezcan un adecuado desarrollo personal y social, pueda llegar a su plenitud e integrarse a su entorno, haciéndose partícipe de los compromisos de su comunidad. Teniendo así, una vida digna y útil dentro de la sociedad a pesar de sus diferencias individuales siendo cada una, única e irrepetible.</p>
+                </div>
+                <div class="info-card">
+                    <span class="section-tag">NUESTRA VISIÓN</span>
+                    <h3>Visión</h3>
+                    <p>Crear un Espacio INFANTO-JUVENIL, tendiente a la Estimulación de Potencialidades y al desarrollo de la Creatividad, el Aprendizaje y el Deporte sin perder de vista la Inclusión del niño y joven a la sociedad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="objetivos">
+        <div class="section-container">
+            <div class="section-header-center">
+                <span class="section-tag">METAS INSTITUCIONALES</span>
+                <h2 class="section-title">Objetivos y Estrategia Institucional</h2>
+            </div>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                <ul class="feature-list">
+                    <li><strong>Asistencia Social:</strong> Asistir a personas de escasos recursos económicos y financieros que tengan por finalidad la rehabilitación de las personas con capacidades diferentes y su integración al medio social, en forma digna y útil.</li>
+                    <li><strong>Defensa de Derechos:</strong> Velar y defender sus derechos.</li>
+                    <li><strong>Inclusión Laboral:</strong> Inclusión laboral.</li>
+                    <li><strong>Objetivo Principal:</strong> La búsqueda imperiosa de crear el bienestar material, espiritual, moral y cívico de las personas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="como-ayudamos" class="section-alt">
+        <div class="section-container">
+            <div class="section-header-center">
+                <span class="section-tag">ACCIONES Y METODOLOGÍA</span>
+                <h2 class="section-title">¿Cómo ayuda la Fundación?</h2>
+            </div>
             <div class="grid-3col">
-                <div id="quienes-somos" class="info-card">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Quiénes Somos" class="info-card-img">
-                    <div class="info-card-body">
-                        <h3>Quiénes Somos</h3>
-                        <p>Somos una organización social enfocada en el fortalecimiento educativo, artístico, artesanal y comunitario de la población vulnerable, promoviendo valores de autogestión y equidad.</p>
-                        <a href="javascript:void(0)" onclick="copyToClipboard('RUC 80087692-0 - Fundación Espacio de Vida', 'RUC Institucional')" class="info-card-link">Copiar RUC Oficial 📋</a>
-                    </div>
-                </div>
-
-                <div id="equipo" class="info-card">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Nuestro Equipo" class="info-card-img">
-                    <div class="info-card-body">
-                        <h3>Nuestro Equipo</h3>
-                        <p>Contamos con una directiva y equipo técnico multidisciplinario liderado por la <strong>Lic. Sandra Vera</strong> (Tesorera y Representante Legal), respaldado por profesionales comprometidos.</p>
-                        <a href="#contacto" class="info-card-link">Contactar a la Directiva ✉️</a>
-                    </div>
-                </div>
-
-                <div id="legales" class="info-card">
-                    <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" alt="Documentos Legales" class="info-card-img">
-                    <div class="info-card-body">
-                        <h3>Documentos Legales</h3>
-                        <p>Operamos bajo estricto cumplimiento del Decreto N° 1913/2014, aprobaciones de la SET/DNIT y normativas de prevención de SEPRELAD.</p>
-                        <a href="JUSTIFICACION_CONTABLE_Y_JURIDICA.docx" class="info-card-link">Descargar Dictamen Técnico (Word) 📄</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección 2: Nuestros Proyectos -->
-    <section id="proyectos" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">INICIATIVAS DE IMPACTO</span>
-                <h2 class="section-title">Nuestros Proyectos</h2>
-                <p class="section-desc">Desarrollamos programas sostenibles diseñados para transformar oportunidades comunitarias.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" alt="Proyecto Talentos" class="project-img">
-                    <div class="project-content">
-                        <span class="project-tag">ARTE Y MÚSICA</span>
-                        <h4 class="project-title">Talentos</h4>
-                        <p class="project-desc">Identificación, desarrollo y acompañamiento a jóvenes y niños con vocación artística y musical.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?auto=format&fit=crop&w=600&q=80" alt="Festival de Artes" class="project-img">
-                    <div class="project-content">
-                        <span class="project-tag">CULTURA URBANA</span>
-                        <h4 class="project-title">Festival de Artes</h4>
-                        <p class="project-desc">Espacios comunitarios de integración donde se exponen expresiones artesanales y artísticas locales.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80" alt="Luces Cámaras Acción" class="project-img">
-                    <div class="project-content">
-                        <span class="project-tag">AUDIOVISUAL Y FOTO</span>
-                        <h4 class="project-title">Luces, Cámaras, Acción</h4>
-                        <p class="project-desc">Talleres de formación en producción digital, narrativa audiovisual y fotografía para jóvenes.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Yo Emprendo" class="project-img">
-                    <div class="project-content">
-                        <span class="project-tag">DESARROLLO ECONÓMICO</span>
-                        <h4 class="project-title">Yo Emprendo</h4>
-                        <p class="project-desc">Capacitación técnica en micro-emprendimientos, finanzas personales y gestión de pequeños negocios.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Galería de Fotos de Impacto -->
-    <section id="galeria">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">REGISTRO FOTOGRÁFICO DE ACTIVIDADES</span>
-                <h2 class="section-title">Galería de Impacto Social</h2>
-                <p class="section-desc">Imágenes reales de nuestros talleres, festivales y encuentros comunitarios en Lambaré y alrededores.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" alt="Jornada Comunitaria">
-                    <div class="gallery-overlay">Jornadas de Integración Comunitaria</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Talleres Educativos">
-                    <div class="gallery-overlay">Talleres Formativos e Infantiles</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80" alt="Acción Social">
-                    <div class="gallery-overlay">Proyectos de Inclusión Social</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Arte Urbano">
-                    <div class="gallery-overlay">Encuentros de Arte y Pintura</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Capacitación Emprendedora">
-                    <div class="gallery-overlay">Capacitación a Emprendedores</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Artesanía">
-                    <div class="gallery-overlay">Feria de Artesanías y Talentos</div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 35px;">
-                <a href="https://www.facebook.com/profile.php?id=100072368738843&sk=photos" target="_blank" class="btn-hero-primary">
-                    Ver Álbum Completo de Fotos en Facebook 📸 ↗
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección 3: Nuestra Experiencia -->
-    <section id="experiencia" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">ÁREAS DE ACCIÓN</span>
-                <h2 class="section-title">Nuestra Experiencia</h2>
-                <p class="section-desc">Más de una década ejecutando proyectos de alto impacto social y cultural en Paraguay.</p>
-            </div>
-
-            <div class="exp-grid">
-                <div id="formativos" class="exp-card">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Procesos Formativos" class="exp-card-img">
-                    <div class="exp-card-body">
-                        <h4 class="exp-title">01. Procesos Formativos</h4>
-                        <p class="exp-desc">Cursos, seminarios y talleres prácticos orientados al desarrollo de capacidades técnicas, artísticas y blandas.</p>
-                    </div>
-                </div>
-
-                <div id="emprendimiento" class="exp-card">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Emprendimiento" class="exp-card-img">
-                    <div class="exp-card-body">
-                        <h4 class="exp-title">02. Emprendimiento</h4>
-                        <p class="exp-desc">Asesoría a familias y emprendedores locales para impulsar unidades productivas autosostenibles.</p>
-                    </div>
-                </div>
-
-                <div id="festivales" class="exp-card">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Encuentros y Festivales" class="exp-card-img">
-                    <div class="exp-card-body">
-                        <h4 class="exp-title">03. Encuentros y Festivales</h4>
-                        <p class="exp-desc">Organización y logística de ferias artesanales, encuentros artísticos y festivales multiculturales.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección 4: Voluntariado Banner -->
-    <section id="voluntariado">
-        <div class="section-container">
-            <div class="voluntariado-banner">
-                <div class="voluntariado-content">
-                    <h3>¡Sé parte de Nuestro Voluntariado! 🤝</h3>
-                    <p>Nuestros voluntarios son el pilar fundamental para llevar capacitaciones, logística y apoyo emocional a las comunidades que más lo necesitan. Tu tiempo y conocimiento transforman vidas.</p>
-                    <a href="https://wa.me/595981000000?text=Hola,%20deseo%20ser%20voluntario%20en%20la%20Fundación%20Espacio%20de%20Vida" target="_blank" class="btn-hero-primary">Unirme como Voluntario por WhatsApp 💬</a>
-                </div>
-                <div style="text-align: center;">
-                    <span style="font-size: 110px;">🌟</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección 5: Calculadora RSE & Beneficios Fiscales -->
-    <section id="rse" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">OPTIMIZACIÓN TRIBUTARIA Y RSE</span>
-                <h2 class="section-title">Calculadora de Deducibilidad Impositiva (IRE)</h2>
-                <p class="section-desc">Calcule en tiempo real el monto máximo deducible para su empresa según la Ley N° 6380/19 (Límite 1% de Ingresos Brutos).</p>
-            </div>
-
-            <div class="calculator-widget">
-                <div class="calc-info">
-                    <h3>💡 Respaldo para Balances Corporativos</h3>
-                    <p>Las donaciones otorgadas a la Fundación Espacio de Vida se benefician con la <strong>Exoneración Total de IVA</strong> (Art. 104 y 111 Ley 1034/83 & Art. 100 Ley 6380/19) y son <strong>computables como Gasto Deducible en el Impuesto a la Renta Empresarial (IRE)</strong>.</p>
-                    <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-                        <button onclick="openModalRecibo()" class="btn-hero-primary" style="padding: 10px 20px; font-size: 13px;">Previsualizar Recibo Oficial (Modal) 🔍</button>
-                        <a href="RECIBO_DE_DONACION_OFICIAL.docx" class="btn-hero-secondary" style="padding: 10px 20px; font-size: 13px; color: var(--text-heading); border-color: var(--border-color);">Descargar Recibo en Word 📄</a>
-                    </div>
-                </div>
-
-                <div class="calc-form">
-                    <div class="form-group">
-                        <label for="calc-income">Ingreso Bruto Anual de la Empresa (Gs.):</label>
-                        <input type="number" id="calc-income" class="form-control" placeholder="Ej: 500000000" oninput="calculateTaxBenefit()">
-                    </div>
-
-                    <div class="calc-results">
-                        <div>
-                            <span>Límite Máximo Deducible en IRE (1%):</span>
-                            <strong id="calc-deductible">Gs. 0</strong>
-                        </div>
-                        <div>
-                            <span>Impuesto al Valor Agregado (IVA):</span>
-                            <strong style="color: var(--primary);">Gs. 0 (EXENTO)</strong>
-                        </div>
-                        <div style="border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 4px;">
-                            <span>Ahorro / Impacto Fiscal Estimado (10% IRE):</span>
-                            <strong id="calc-savings" style="color: var(--gold);">Gs. 0</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección 6: Realiza tu Donación -->
-    <section id="donar">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">CANALES DE APORTE</span>
-                <h2 class="section-title">Realiza tu Donación</h2>
-                <p class="section-desc">Con tu contribución posibilitas la continuidad de nuestros programas educativos y sociales.</p>
-            </div>
-
-            <div class="donar-container">
-                <div class="donar-card">
-                    <h4>💳 Modalidades de Donación Habilitadas</h4>
-                    <ul class="donar-list">
-                        <li>✅ Transferencia / Depósito Bancario Institucional.</li>
-                        <li>✅ Donación en Efectivo con Recibo Oficial Pre-numerado A4.</li>
-                        <li>✅ Insumos Alimentarios, Equipamiento y Materiales Educativos.</li>
-                        <li>✅ Convenios de Responsabilidad Social Empresarial (RSE).</li>
+                <div class="info-card">
+                    <h3>Espacios & Inclusión</h3>
+                    <ul class="feature-list">
+                        <li>Brinda espacios para el apoyo en las necesidades de las personas y favorezcan un adecuado desarrollo personal y social.</li>
+                        <li>Promover, apoyar o realizar actividades que tengan por finalidad la inclusión de las personas.</li>
+                        <li>Ayudar a crear accesos a actividades culturales, demostrando sus habilidades al máximo en forma independiente.</li>
                     </ul>
-                    <div style="margin-top: 24px;">
-                        <button onclick="copyToClipboard('espaciodevidafundacion@gmail.com', 'Email Oficial')" class="btn-hero-primary" style="padding: 10px 20px; font-size: 13px;">Copiar Email Oficial 📧</button>
-                    </div>
                 </div>
-
-                <div class="seal-box">
-                    <img src="FORMULARIOS/logo_espacio_de_vida.png" alt="Sello Dorado Oficial">
-                    <h4 style="color: var(--gold); font-size: 16px; font-weight: 800; text-transform: uppercase;">Sello Oficial de Respaldación</h4>
-                    <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Emitido bajo el Decreto N° 1913/2014 &bull; RUC 80087692-0 &bull; Válido para deducción impositiva en balances tributarios.</p>
+                <div class="info-card">
+                    <h3>Formación & Autonomía</h3>
+                    <ul class="feature-list">
+                        <li>La preparación de profesionales que apoyen y ayuden a la formación de las familias de los niños y jóvenes y lograr mayor autonomía e independencia.</li>
+                        <li>Acompañar la preparación para la transición a la vida activa y a la inclusión en la comunidad que le permita desempeñar un rol activo y productivo y satisfacer sus necesidades económicas y personales.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Desarrollo & Convenios</h3>
+                    <ul class="feature-list">
+                        <li>Formación y desarrollo organizacional con enfoque inclusivo.</li>
+                        <li>Talleres de capacitación y sensibilización.</li>
+                        <li>Formación de profesionales.</li>
+                        <li>Articulación y generación de acciones comunitarias en favor de la inclusión.</li>
+                        <li>Apoya a una escuela con el almuerzo y con especialistas para los alumnos.</li>
+                        <li>Convenios con Instituciones para la Inclusión.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- SECCIÓN UNIFICADA: UBICACIÓN, MAPA Y CONTACTO -->
+    <section id="proyectos">
+        <div class="section-container">
+            <div class="section-header-center">
+                <span class="section-tag">ACCIONES PARA ROMPER LAS BARRERAS</span>
+                <h2 class="section-title">Impacto Social & Proyectos</h2>
+                <p class="section-desc">Programas que nos ayudan a movilizar diferentes sectores de la sociedad buscando generar acciones compartidas que promuevan la inclusión que fortalezcan el cumplimiento de los derechos de las personas. Para lograrlo realizamos acciones de sensibilización, capacitación, pintatas, festivales, talleres y otras actividades con apoyo de instituciones públicas, medios de comunicación, autoridades y la comunidad en general.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card"><div class="project-content"><span class="project-tag">CULTURA Y COMUNIDAD</span><h4 class="project-title">Proyecto Festival por un Espacio de Vida</h4><p class="project-desc">Festival por un espacio de vida a beneficio de la escuela ARASY con más de 15 artistas reconocidos y el apoyo de la municipalidad de Lambaré como Actividad de carácter cultural.</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">AUTISMO E INCLUSIÓN</span><h4 class="project-title">Proyecto Pintando una Sonrisa</h4><p class="project-desc">Pintata por el día del Autismo con escuelas de Lambaré con el apoyo de figuras públicas de la TV, bomberos voluntarios, Municipalidad de Lambaré y la Iglesia Virgen del Rosario.</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">SOLIDARIDAD EN INUNDACIÓN</span><h4 class="project-title">Proyecto Manos Solidarias</h4><p class="project-desc">Colecta de víveres y ropas para las familias de Yukuty con apoyo de escuela Arasy, el grupo 4x4 y toda la comunidad de Barrio Kennedy en período de inundación.</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">INTEGRACIÓN SOCIAL</span><h4 class="project-title">Proyecto Cumpliendo el Sueño</h4><p class="project-desc">Festejo de 15 años a 5 jovencitas con el apoyo de artistas nacionales del momento (Que Loco, Contramano, DJ-Rata, Las Culisueltas y Monchi Papa).</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">APOYO PEDAGÓGICO</span><h4 class="project-title">Proyecto Bomberos por un Día</h4><p class="project-desc">Apoyando el área pedagógica de la escuela y llevando a los Bomberos a Instituciones educativas.</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">SALUD Y ASISTENCIA</span><h4 class="project-title">Proyecto Vida Sana</h4><p class="project-desc">Realizando actividades para juntar fondos para un niño con cáncer, inspección médica por especialistas en instituciones previa a actividades físicas, servicio de peluquería y ayuda social en tratamientos.</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">REHABILITACIÓN</span><h4 class="project-title">Apoyo para la Rehabilitación: Equinoterapia</h4><p class="project-desc">Apoyo continuo para la rehabilitación física, motriz y emocional a través de la terapia asistida con caballos (Equinoterapia).</p></div></div>
+                <div class="project-card"><div class="project-content"><span class="project-tag">FESTIVIDAD INFANTIL</span><h4 class="project-title">Proyecto Semana del Niño - Días de Sonrisas</h4><p class="project-desc">Jornadas festivas con apoyo de universidades, show del Tío José, Globo Loco, Municipalidad, Bomberos y muchísimos amigos.</p></div></div>
+            </div>
+        </div>
+    </section>
     <section id="contacto" class="section-alt">
         <div class="section-container">
             <div class="section-header-center">
-                <span class="section-tag">ESTAMOS PARA ATENDERTE</span>
+                <span class="section-tag">ENCUÉNTRANOS EN...</span>
                 <h2 class="section-title">Ubicación & Contacto Directo</h2>
-                <p class="section-desc">Sede Oficial de la Fundación Espacio de Vida en Lambaré, Paraguay. Mapa interactivo en vivo, información institucional y formulario de contacto.</p>
+                <p class="section-desc">La Fundación ESPACIO DE VIDA se encuentra trabajando dentro de la ciudad de Lambaré gracias a los amigos y personas de buen corazón de forma incansable. Los logros que estamos obteniendo es a beneficio de las personas que han depositado su confianza en nosotros.</p>
             </div>
-
             <div class="contact-grid" style="margin-bottom: 30px;">
                 <div class="contact-info-box">
                     <div>
                         <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #ffffff;">Fundación Espacio de Vida</h3>
-                        <div class="contact-item">
-                            <span class="contact-item-icon">📍</span>
-                            <div>
-                                <h5>Dirección Institucional</h5>
-                                <p>Capitán Figari c/ Piribebuy 643, Barrio Kennedy, Lambaré, Depto. Central, Paraguay</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">📞</span>
-                            <div>
-                                <h5>Teléfono de Contacto</h5>
-                                <p><a href="tel:0991978413" style="color: #ffffff; text-decoration: none;">0991.978.413</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">✉️</span>
-                            <div>
-                                <h5>Correo Electrónico</h5>
-                                <p>espaciodevidafundacion@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">🌐</span>
-                            <div>
-                                <h5>Página Web</h5>
-                                <p><a href="https://www.fundacionespaciodevida.org.py" target="_blank" style="color: var(--gold); font-weight: 700; text-decoration: underline;">www.fundacionespaciodevida.org.py ↗</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">📸</span>
-                            <div>
-                                <h5>Redes Sociales</h5>
-                                <p>
-                                    <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100072368738843" target="_blank" style="color: var(--gold); font-weight: 700; text-decoration: underline;">Fundación Espacio de Vida ↗</a><br>
-                                    <strong>Instagram:</strong> Espacio De Vida Fundación
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">🏛️</span>
-                            <div>
-                                <h5>RUC y Registro Legal</h5>
-                                <p>RUC: 80087692-0 | Decreto N° 1913/2014</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px;">
-                        <p style="font-size: 12.5px; color: rgba(255,255,255,0.7);">Representante Legal / Tesorera:<br><strong>Lic. Sandra Vera</strong></p>
+                        <div class="contact-item"><span class="contact-item-icon">📍</span><div><h5>Dirección</h5><p>Guaraníes 196 c/ Cacique Lambaré (Barrio Cerro Corá) / Capitán Figari c/ Piribebuy 643 (Barrio Kennedy)</p></div></div>
+                        <div class="contact-item"><span class="contact-item-icon">📞</span><div><h5>Teléfono</h5><p>021-902-544 / 0961298912 / 0991.978.413</p></div></div>
+                        <div class="contact-item"><span class="contact-item-icon">✉️</span><div><h5>Correo Electrónico</h5><p>Espaciodevidafundación@gmail.com</p></div></div>
+                        <div class="contact-item"><span class="contact-item-icon">🌐</span><div><h5>Página Web</h5><p><a href="http://www.espaciodevida.org" target="_blank" style="color: #fef08a; font-weight: 700;">www.espaciodevida.org ↗</a></p></div></div>
+                        <div class="contact-item"><span class="contact-item-icon">📸</span><div><h5>Facebook</h5><p>Fundación Espacio de Vida</p></div></div>
+                        <div class="contact-item"><span class="contact-item-icon">🏛️</span><div><h5>Distrito / Dpto.</h5><p>Distrito Lambaré &bull; Dpto. Central &bull; Paraguay</p></div></div>
                     </div>
                 </div>
-
                 <div class="contact-form-box">
-                    <form onsubmit="event.preventDefault(); copyToClipboard('Formulario Enviado', 'Mensaje'); alert('¡Gracias por contactarnos! Nos comunicaremos a la brevedad.');">
-                        <div class="form-group">
-                            <label>Nombre Completo / Empresa:</label>
-                            <input type="text" class="form-control" required placeholder="Ej: Maria Gonzalez / Empresa S.A.">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Correo Electrónico o Teléfono:</label>
-                            <input type="text" class="form-control" required placeholder="Ej: contacto@empresa.com.py / 0991 978 413">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Mensaje o Consulta:</label>
-                            <textarea class="form-control" rows="4" required placeholder="Escriba su consulta sobre donaciones, voluntariado o alianzas..."></textarea>
-                        </div>
-
+                    <form onsubmit="event.preventDefault(); copyToClipboard('Mensaje Enviado', 'Mensaje'); alert('¡Gracias por contactar con la Fundación Espacio de Vida!');">
+                        <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px; color: var(--text-heading);">Enviar Mensaje o Propuesta</h4>
+                        <div class="form-group"><label>Nombre Completo / Institución:</label><input type="text" class="form-control" required placeholder="Ej: Maria Gonzalez"></div>
+                        <div class="form-group"><label>Correo Electrónico o Teléfono:</label><input type="text" class="form-control" required placeholder="Ej: 0961 298 912"></div>
+                        <div class="form-group"><label>Mensaje:</label><textarea class="form-control" rows="4" required placeholder="Escriba su mensaje sobre voluntariado, alianzas o apoyos..."></textarea></div>
                         <button type="submit" class="btn-hero-primary" style="width: 100%; text-align: center; justify-content: center;">Enviar Mensaje Directo 🚀</button>
                     </form>
                 </div>
             </div>
-
-            <!-- MAPA INTERACTIVO GPS INTEGRADO UNIFICADO -->
             <div id="mapa" class="map-section-direct">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-                    <div>
-                        <span style="font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.8px;">GEOLOCALIZACIÓN EN VIVO</span>
-                        <h4 style="font-size: 18px; font-weight: 800; color: var(--text-heading); margin: 2px 0 0 0;">Coordenadas GPS: -25.347093, -57.635810</h4>
-                    </div>
-                    <div>
-                        <a href="https://www.google.com/maps?q=-25.347093450033267,-57.63581040164236" target="_blank" class="btn-hero-primary" style="font-size: 13px; padding: 10px 18px;">
-                            Abrir GPS en Google Maps 📍 ↗
-                        </a>
-                    </div>
+                    <div><span style="font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase;">GEOLOCALIZACIÓN</span><h4 style="font-size: 18px; font-weight: 800; color: var(--text-heading); margin: 2px 0 0 0;">Lambaré, Departamento Central, Paraguay</h4></div>
+                    <div><a href="https://www.google.com/maps?q=-25.347093450033267,-57.63581040164236" target="_blank" class="btn-hero-primary" style="font-size: 13px; padding: 10px 18px;">Abrir GPS en Google Maps 📍 ↗</a></div>
                 </div>
                 <div class="map-iframe-box" style="height: 350px;">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=-25.347093450033267,-57.63581040164236&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://maps.google.com/maps?q=-25.347093450033267,-57.63581040164236&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer Web -->
     <footer>
         <div class="footer-container">
-            <div>
-                <strong style="color: #ffffff; font-size: 16px; display: block; margin-bottom: 4px;">Fundación Espacio de Vida</strong>
-                <span>Entidad Receptora de Donaciones Sin Fines de Lucro &bull; RUC 80087692-0 &bull; Decreto N° 1913/2014 &bull; Capitán Figari c/ Piribebuy 643, Barrio Kennedy, Lambaré, Depto. Central &bull; Tel: 0991.978.413 &bull; www.fundacionespaciodevida.org.py</span>
-            </div>
-
+            <div><strong style="color: #ffffff; font-size: 16px; display: block; margin-bottom: 4px;">Fundación Espacio de Vida</strong><span>Organización Sin Fines de Lucro &bull; Creada en 2013 &bull; Lambaré, Depto. Central &bull; Tel: 021-902-544 / 0961.298.912 &bull; www.espaciodevida.org</span></div>
             <div class="tricolor-stripe-web"></div>
-
-            <div>
-                <span>Exenta de IVA (Art. 104 y 111 Ley 1034/83 & Art. 100 Ley 6380/19) &bull; Deducible en IRE (Art. 15 num. 20 Ley 6380/19)</span>
-            </div>
+            <div><span style="font-size: 14px; font-weight: 800; color: #ffffff;">SI QUIERES APOYAR ESTA GRAN OBRA... TE NECESITAMOS. ¡GRACIAS POR SU ATENCIÓN!</span></div>
         </div>
     </footer>
-
-    <!-- Floating WhatsApp button -->
-    <a href="https://wa.me/595991978413?text=Hola,%20deseo%20obtener%20información%20de%20la%20Fundación%20Espacio%20de%20Vida" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
-        💬
-    </a>
-
-    <!-- MODAL UX PREVISUALIZACIÓN DE RECIBO DE DONACIÓN -->
-    <div class="modal-overlay" id="modal-recibo">
-        <div class="modal-body-container">
-            <button class="modal-close-btn" onclick="closeModalRecibo()">✕</button>
-            <iframe src="FORMULARIOS/RECIBO_DE_DONACION.html" style="width: 100%; height: 80vh; border: none;"></iframe>
-        </div>
-    </div>
-
-    <!-- SCRIPTS DE INTERACCIÓN UX Y CALCULADORA -->
+    <a href="https://wa.me/595961298912?text=Hola,%20deseo%20obtener%20información%20de%20la%20Fundación%20Espacio%20de%20Vida" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">💬</a>
     <script>
-        // Scroll Progress Line UX
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
-
-        // Toast Copy to Clipboard UX
-        function copyToClipboard(text, label) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                document.getElementById('toast-text').innerText = `¡${label} copiado al portapapeles!`;
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 2800);
-            });
-        }
-
-        // Theme Toggle UX (Dark / Light Mode)
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-        }
-
-        // Modal Recibo UX
-        function openModalRecibo() {
-            document.getElementById('modal-recibo').classList.add('active');
-        }
-
-        function closeModalRecibo() {
-            document.getElementById('modal-recibo').classList.remove('active');
-        }
-
-        // Calculadora Deducibilidad IRE UX
-        function calculateTaxBenefit() {
-            const income = parseFloat(document.getElementById('calc-income').value) || 0;
-            const deductible = income * 0.01;
-            const savings = deductible * 0.10; // 10% Tasa IRE
-
-            document.getElementById('calc-deductible').innerText = 'Gs. ' + deductible.toLocaleString('es-PY');
-            document.getElementById('calc-savings').innerText = 'Gs. ' + savings.toLocaleString('es-PY');
-        }
-
-        // Animación Scroll Reveal Moderna con IntersectionObserver
-        document.addEventListener('DOMContentLoaded', () => {
-            const targets = document.querySelectorAll('section, .contact-info-box, .contact-form-box, .map-section-direct, .seal-box, .program-card, .stat-card');
-            
-            targets.forEach(el => {
-                if (!el.classList.contains('reveal') && !el.classList.contains('reveal-left') && !el.classList.contains('reveal-right') && !el.classList.contains('reveal-scale')) {
-                    el.classList.add('reveal');
-                }
-            });
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
-        });
+        window.addEventListener("scroll", () => { const winScroll = document.documentElement.scrollTop; const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; const scrolled = (winScroll / height) * 100; document.getElementById("scroll-progress").style.width = scrolled + "%"; });
+        function copyToClipboard(text, label) { navigator.clipboard.writeText(text).then(() => { const toast = document.getElementById("toast"); document.getElementById("toast-text").innerText = `¡${label} copiado al portapapeles!`; toast.classList.add("show"); setTimeout(() => { toast.classList.remove("show"); }, 2800); }); }
+        function toggleTheme() { const html = document.documentElement; const currentTheme = html.getAttribute("data-theme"); const newTheme = currentTheme === "dark" ? "light" : "dark"; html.setAttribute("data-theme", newTheme); }
+        document.addEventListener("DOMContentLoaded", () => { const targets = document.querySelectorAll("section, .info-card, .project-card, .contact-info-box, .contact-form-box"); targets.forEach(el => { if (!el.classList.contains("reveal")) { el.classList.add("reveal"); } }); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("active"); } }); }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }); document.querySelectorAll(".reveal").forEach(el => observer.observe(el)); });
     </script>
 </body>
 </html>
