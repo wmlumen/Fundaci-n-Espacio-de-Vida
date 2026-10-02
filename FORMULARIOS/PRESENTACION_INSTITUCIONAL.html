@@ -3,1409 +3,1421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Espacio de Vida – Desarrollo Sostenible Paraguay</title>
-    <meta name="description" content="Fundación Espacio de Vida en Lambaré, Paraguay. Por la vida, el hogar y el desarrollo sostenible. Programas de inclusión, educación, salud y apoyo comunitario.">
-    <meta name="keywords" content="donaciones, sostenibilidad, voluntariado, educación ambiental, inclusión, Lambaré, Paraguay, Fundación Espacio de Vida">
-    <meta name="author" content="Fundación Espacio de Vida - Diseño por Emil Kowalski">
-    
-    <!-- Tipografía Profesional: Merriweather & Open Sans -->
+    <title>Fundación Espacio de Vida – Equinoterapia e Inclusión en Lambaré, Paraguay</title>
+    <meta name="description" content="Fundación Espacio de Vida en Lambaré, Paraguay. Equinoterapia, inclusión educativa y atención al espectro autista desde 2013. RUC 80087692-0. Donaciones deducibles de IRE.">
+    <meta name="keywords" content="equinoterapia Paraguay, inclusión escolar, autismo Lambaré, donaciones deducibles IRE, RSE Paraguay, Fundación Espacio de Vida, voluntariado, Escuela ARASY">
+    <meta name="author" content="Fundación Espacio de Vida – Lambaré, Paraguay">
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wmlumen.github.io/Fundacion-Espacio-de-Vida/">
+    <meta property="og:title" content="Fundación Espacio de Vida – Transformamos capacidades en futuros independientes">
+    <meta property="og:description" content="Desde 2013 en Lambaré, brindamos equinoterapia, inclusión escolar y apoyo al espectro autista. Donaciones deducibles del IRE bajo Art. 15 Ley 6380/19.">
+    <meta property="og:image" content="image/hero_banner.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundación Espacio de Vida – Lambaré, Paraguay">
+    <meta name="twitter:description" content="Equinoterapia, inclusión escolar y atención al autismo desde 2013. Apoyá nuestra causa.">
+    <meta name="twitter:image" content="image/hero_banner.jpg">
+
+    <!-- Preconnect fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Paleta Institucional */
-            --primary-green: #2d6a4f;
-            --primary-dark: #1b4332;
-            --primary-light: #52b788;
-            --soft-green: #f0fdf4;
-            --gold: #c59b27;
-            --gold-hover: #b0871d;
-            --gold-light: #fffbea;
-            --petroleum-blue: #0f2b46;
-            --petroleum-dark: #091a2b;
-            --red-accent: #d90429;
-            
-            /* Fondos Neutros */
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --bg-section-alt: #f1f5f9;
-            --text-heading: #0f2b46;
-            --text-body: #334155;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            
-            --font-heading: 'Merriweather', Georgia, serif;
-            --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
-            
-            --radius-lg: 16px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow-sm: 0 4px 12px rgba(15, 43, 70, 0.05);
-            --shadow-md: 0 12px 28px -6px rgba(15, 43, 70, 0.09);
-            --shadow-lg: 0 20px 40px -15px rgba(15, 43, 70, 0.14);
+            /* === PALETA INSTITUCIONAL PARAGUAYA VIBRANTE === */
+            --green-hope:    #16a34a;
+            --green-dark:    #14532d;
+            --green-mid:     #22c55e;
+            --green-light:   #dcfce7;
+            --green-xlight:  #f0fdf4;
+
+            --blue-trust:    #2563eb;
+            --blue-dark:     #1e3a8a;
+            --blue-mid:      #3b82f6;
+            --blue-light:    #dbeafe;
+
+            --gold:          #d97706;
+            --gold-bright:   #f59e0b;
+            --gold-light:    #fef3c7;
+
+            --coral-cta:     #e11d48;
+            --coral-hover:   #be123c;
+            --coral-light:   #ffe4e6;
+
+            --petroleum:     #0f2b46;
+            --petroleum-mid: #1e3a5f;
+
+            /* === NEUTROS === */
+            --bg:            #f8fafc;
+            --surface:       #ffffff;
+            --surface-alt:   #f1f5f9;
+            --border:        #e2e8f0;
+            --text-h:        #0f172a;
+            --text-b:        #334155;
+            --text-m:        #64748b;
+
+            /* === TIPOGRAFIA === */
+            --font-h:  'Merriweather', Georgia, serif;
+            --font-b:  'Inter', system-ui, sans-serif;
+
+            /* === TOKENS === */
+            --r-xl: 24px; --r-lg: 16px; --r-md: 12px; --r-sm: 8px;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --sh-sm: 0 4px 14px rgba(0,0,0,0.06);
+            --sh-md: 0 12px 32px rgba(0,0,0,0.10);
+            --sh-lg: 0 24px 48px rgba(0,0,0,0.14);
         }
 
         [data-theme="dark"] {
-            --bg-body: #090d16;
-            --bg-card: #0f172a;
-            --bg-section-alt: #0c121e;
-            --text-heading: #f8fafc;
-            --text-body: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border-color: #1e293b;
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.4);
-            --shadow-md: 0 12px 28px -6px rgba(0,0,0,0.5);
-            --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.7);
+            --bg:          #060d1b;
+            --surface:     #0d1829;
+            --surface-alt: #0a1220;
+            --border:      #1e2d45;
+            --text-h:      #f1f5f9;
+            --text-b:      #94a3b8;
+            --text-m:      #64748b;
+            --sh-sm: 0 4px 14px rgba(0,0,0,0.4);
+            --sh-md: 0 12px 32px rgba(0,0,0,0.5);
+            --sh-lg: 0 24px 48px rgba(0,0,0,0.7);
         }
 
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
-            font-family: var(--font-body);
-            background-color: var(--bg-body);
-            color: var(--text-body);
-            line-height: 1.65;
-            overflow-x: hidden;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        h1, h2, h3, h4, .serif-font {
-            font-family: var(--font-heading);
-        }
-
-        a, button, input, select, textarea {
-            transition: var(--transition-smooth);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-green), var(--gold), var(--petroleum-blue));
-            z-index: 10000;
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-
-        .toast-notification {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--petroleum-dark);
-            color: #ffffff;
-            border: 1px solid var(--gold);
-            padding: 14px 24px;
-            border-radius: var(--radius-md);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            font-size: 14px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 9999;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: var(--transition-smooth);
-            pointer-events: none;
-        }
-
-        .toast-notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-nav);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 14px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-        }
-
-        .brand-logo img {
-            height: 48px;
-            width: auto;
-        }
-
-        .brand-text h1 {
-            font-size: 19px;
-            font-weight: 900;
-            color: var(--petroleum-blue);
-            line-height: 1.15;
-            letter-spacing: -0.3px;
-        }
-
-        [data-theme="dark"] .brand-text h1 {
-            color: #ffffff;
-        }
-
-        .brand-text span {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            display: block;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            list-style: none;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-body);
-            font-size: 13.5px;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: var(--radius-sm);
-        }
-
-        .nav-link:hover {
-            color: var(--primary-green);
-            background: rgba(45, 106, 79, 0.08);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .theme-toggle-btn {
-            background: var(--bg-section-alt);
-            border: 1px solid var(--border-color);
-            color: var(--text-heading);
-            padding: 8px 12px;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .btn-cta-donar {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-hover) 100%);
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 13.5px;
-            padding: 10px 22px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(197, 155, 39, 0.35);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-cta-donar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(197, 155, 39, 0.5);
-        }
-
-        .hero {
-            padding: 150px 24px 80px 24px;
-            background: radial-gradient(circle at 90% 10%, rgba(45, 106, 79, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 10% 90%, rgba(15, 43, 70, 0.06) 0%, transparent 50%);
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-motto-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--soft-green);
-            color: var(--primary-dark);
-            border: 1px solid var(--primary-light);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 22px;
-        }
-
-        .hero-title {
-            font-size: 46px;
-            font-weight: 900;
-            color: var(--text-heading);
-            line-height: 1.18;
-            margin-bottom: 22px;
-            letter-spacing: -0.8px;
-        }
-
-        .hero-title span {
-            color: var(--primary-green);
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 16.5px;
-            color: var(--text-body);
-            margin-bottom: 34px;
-            max-width: 630px;
-            line-height: 1.75;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .btn-hero-primary {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-dark) 100%);
-            color: #ffffff;
-            font-weight: 700;
-            padding: 14px 28px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-size: 14.5px;
-            box-shadow: 0 10px 25px rgba(45, 106, 79, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-hero-secondary {
-            background: var(--bg-card);
-            color: var(--text-heading);
-            border: 1px solid var(--border-color);
-            font-weight: 700;
-            padding: 14px 24px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-size: 14.5px;
-        }
-
-        .hero-card-widget {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-banner-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .hero-card-body {
-            padding: 24px;
-        }
-
-        .hero-card-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 16px;
-        }
-
-        .hero-card-header img {
-            height: 54px;
-            width: auto;
-        }
-
-        .hero-card-info h3 {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--text-heading);
-        }
-
-        .hero-card-info p {
-            font-size: 12.5px;
-            color: var(--text-muted);
-        }
-
-        .hero-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .hero-stat-box {
-            background: var(--bg-section-alt);
-            padding: 14px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-
-        .hero-stat-box strong {
-            display: block;
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--primary-green);
-        }
-
-        .hero-stat-box span {
-            font-size: 11.5px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        section {
-            padding: 90px 24px;
-        }
-
-        .section-alt {
-            background-color: var(--bg-section-alt);
-        }
-
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header-center {
-            text-align: center;
-            max-width: 820px;
-            margin: 0 auto 55px auto;
-        }
-
-        .section-tag {
-            font-size: 12px;
-            font-weight: 800;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 34px;
-            font-weight: 900;
-            color: var(--text-heading);
-            margin-bottom: 16px;
-            line-height: 1.25;
-        }
-
-        .section-desc {
-            font-size: 15.5px;
-            color: var(--text-muted);
-            line-height: 1.75;
-        }
-
-        .grid-3col {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .info-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .info-card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .info-card-content {
-            padding: 28px;
-        }
-
-        .info-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .info-card h3 {
-            font-size: 21px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 14px;
-        }
-
-        .info-card p {
-            font-size: 14.5px;
-            color: var(--text-body);
+            font-family: var(--font-b);
+            background: var(--bg);
+            color: var(--text-b);
             line-height: 1.7;
+            overflow-x: hidden;
+            transition: background .4s, color .4s;
         }
 
-        .feature-list {
-            list-style: none;
-            margin-top: 16px;
+        h1,h2,h3,h4 { font-family: var(--font-h); color: var(--text-h); }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ── SCROLL PROGRESS ── */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+            background: linear-gradient(90deg, var(--green-hope), var(--blue-trust), var(--coral-cta));
+            width: 0%; transition: width .1s linear;
         }
 
-        .feature-list li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 14px;
-            font-size: 14.5px;
-            color: var(--text-body);
-            line-height: 1.65;
+        /* ── REVEAL ANIMATION ── */
+        .reveal {
+            opacity: 0; transform: translateY(28px);
+            transition: opacity .8s var(--ease), transform .8s var(--ease);
         }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: .1s; }
+        .reveal-delay-2 { transition-delay: .2s; }
+        .reveal-delay-3 { transition-delay: .3s; }
+        .reveal-delay-4 { transition-delay: .4s; }
 
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--primary-green);
-            font-weight: 900;
+        /* ── TOAST ── */
+        .toast {
+            position: fixed; bottom: 28px; right: 28px; z-index: 9990;
+            background: var(--petroleum); color: #fff;
+            border: 1.5px solid var(--gold-bright);
+            padding: 14px 22px; border-radius: var(--r-md);
+            font-size: 14px; font-weight: 600;
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: var(--sh-lg);
+            transform: translateY(80px); opacity: 0;
+            transition: all .4s var(--ease); pointer-events: none;
         }
+        .toast.show { transform: translateY(0); opacity: 1; }
 
-        /* Modern Projects Grid & Local Image Styling */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-        }
-
-        .project-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--card-accent, linear-gradient(90deg, var(--primary-green), var(--gold)));
-            z-index: 2;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-light);
-        }
-
-        .project-content {
-            padding: 26px;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .project-icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 16px;
-            background: var(--icon-bg, #f1f5f9);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-icon-box {
-            transform: scale(1.1) rotate(4deg);
-        }
-
-        .project-tag {
-            font-size: 11px;
-            font-weight: 800;
-            color: var(--primary-green);
-            text-transform: uppercase;
-            letter-spacing: 0.9px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .project-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 10px;
-            line-height: 1.35;
-        }
-
-        .project-desc {
-            font-size: 13.8px;
-            color: var(--text-body);
-            line-height: 1.65;
-            flex-grow: 1;
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            height: 220px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(15, 43, 70, 0.85) 0%, transparent 60%);
-            display: flex;
-            align-items: flex-end;
+        /* ── MODAL BACKDROP ── */
+        .modal-backdrop {
+            position: fixed; inset: 0; z-index: 2000;
+            background: rgba(0,0,0,.6); backdrop-filter: blur(6px);
+            display: flex; align-items: center; justify-content: center;
             padding: 20px;
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 700;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
+            opacity: 0; pointer-events: none;
+            transition: opacity .35s var(--ease);
         }
-
-        .transparency-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 36px;
-            box-shadow: var(--shadow-sm);
+        .modal-backdrop.open { opacity: 1; pointer-events: all; }
+        .modal-box {
+            background: var(--surface); border-radius: var(--r-xl);
+            padding: 40px 36px; max-width: 520px; width: 100%;
+            box-shadow: var(--sh-lg);
+            transform: scale(.93) translateY(20px);
+            transition: transform .4s var(--ease);
+            max-height: 92vh; overflow-y: auto;
         }
-
-        .transparency-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 24px;
+        .modal-backdrop.open .modal-box { transform: scale(1) translateY(0); }
+        .modal-close {
+            float: right; background: none; border: none; cursor: pointer;
+            font-size: 22px; color: var(--text-m); line-height: 1;
+            transition: color .2s;
         }
+        .modal-close:hover { color: var(--coral-cta); }
 
-        .transparency-item {
-            background: var(--bg-section-alt);
-            padding: 20px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
+        /* ── HEADER / NAV ── */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,.88);
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+            transition: background .4s, box-shadow .4s;
+        }
+        [data-theme="dark"] header {
+            background: rgba(6,13,27,.88);
+        }
+        header.scrolled { box-shadow: var(--sh-md); }
+
+        .nav-inner {
+            max-width: 1280px; margin: 0 auto; padding: 12px 24px;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand img { height: 44px; width: auto; border-radius: 50%; }
+        .brand-name {
+            font-family: var(--font-h); font-size: 16px; font-weight: 900;
+            color: var(--petroleum); line-height: 1.2;
+        }
+        [data-theme="dark"] .brand-name { color: #fff; }
+        .brand-tagline { font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .8px; }
+
+        .nav-links { display: flex; align-items: center; gap: 6px; }
+        .nav-links a {
+            padding: 8px 14px; border-radius: var(--r-sm);
+            font-size: 13.5px; font-weight: 600; color: var(--text-b);
+            transition: all .25s;
+        }
+        .nav-links a:hover { background: var(--surface-alt); color: var(--green-hope); }
+
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: var(--r-md); font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: all .3s var(--ease); text-align: center; }
+        .btn-coral { background: var(--coral-cta); color: #fff; box-shadow: 0 4px 18px rgba(225,29,72,.4); }
+        .btn-coral:hover { background: var(--coral-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(225,29,72,.5); }
+        .btn-green { background: var(--green-hope); color: #fff; box-shadow: 0 4px 18px rgba(22,163,74,.35); }
+        .btn-green:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,.45); }
+        .btn-outline { background: transparent; border: 2px solid currentColor; color: var(--green-hope); }
+        .btn-outline:hover { background: var(--green-light); }
+        .btn-blue { background: var(--blue-trust); color: #fff; box-shadow: 0 4px 18px rgba(37,99,235,.35); }
+        .btn-blue:hover { background: var(--blue-dark); transform: translateY(-2px); }
+        .btn-ghost { background: rgba(255,255,255,.15); color: #fff; border: 1.5px solid rgba(255,255,255,.4); }
+        .btn-ghost:hover { background: rgba(255,255,255,.28); }
+        .btn-sm { padding: 8px 16px; font-size: 13px; }
+        .btn-lg { padding: 16px 32px; font-size: 16px; border-radius: var(--r-lg); }
+
+        .nav-actions { display: flex; gap: 8px; align-items: center; }
+        .theme-toggle {
+            background: none; border: 1.5px solid var(--border); border-radius: var(--r-sm);
+            padding: 7px 10px; cursor: pointer; font-size: 16px; transition: all .25s;
+            color: var(--text-b);
+        }
+        .theme-toggle:hover { border-color: var(--green-hope); background: var(--green-xlight); }
+
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-b); border-radius: 2px; transition: all .3s; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, var(--petroleum) 0%, var(--blue-dark) 40%, var(--green-dark) 100%);
+            padding: 120px 24px 80px;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('image/hero_banner.jpg') center/cover no-repeat;
+            opacity: .22;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom right, rgba(14,43,70,.75) 0%, rgba(22,163,74,.25) 100%);
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+            border-radius: 50px; padding: 6px 16px; margin-bottom: 24px;
+            font-size: 12px; font-weight: 700; color: #fff; letter-spacing: .8px; text-transform: uppercase;
+        }
+        .hero-badge span { background: var(--green-mid); border-radius: 50px; padding: 2px 10px; font-size: 11px; }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 900; color: #fff;
+            line-height: 1.15; margin-bottom: 20px;
+            text-shadow: 0 2px 24px rgba(0,0,0,.3);
+        }
+        .hero h1 em { color: var(--green-mid); font-style: normal; }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255,255,255,.85);
+            max-width: 520px; margin-bottom: 36px; line-height: 1.75;
+        }
+        .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-stats {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px;
+        }
+        .hero-stat-card {
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: var(--r-lg); padding: 20px 18px;
+            backdrop-filter: blur(8px); text-align: center;
+        }
+        .hero-stat-card .stat-num {
+            font-family: var(--font-h); font-size: 2rem; font-weight: 900;
+            color: var(--green-mid); line-height: 1;
+        }
+        .hero-stat-card .stat-label { font-size: 12px; color: rgba(255,255,255,.75); margin-top: 4px; font-weight: 500; }
+        .hero-visual {
+            display: flex; flex-direction: column; gap: 16px;
+        }
+        .hero-img-main {
+            border-radius: var(--r-xl); overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0,0,0,.5);
+            aspect-ratio: 4/3;
+        }
+        .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-trust-row {
+            display: flex; gap: 12px;
+        }
+        .trust-badge {
+            flex: 1; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+            border-radius: var(--r-md); padding: 12px 14px; text-align: center;
+            backdrop-filter: blur(6px);
+        }
+        .trust-badge .tb-icon { font-size: 20px; }
+        .trust-badge .tb-text { font-size: 11px; color: rgba(255,255,255,.8); margin-top: 4px; font-weight: 600; }
+
+        /* ── SECTION WRAPPER ── */
+        .section { padding: 100px 24px; }
+        .section-alt { background: var(--surface-alt); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--green-light); color: var(--green-dark);
+            border-radius: 50px; padding: 5px 14px; font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .8px; margin-bottom: 16px;
+        }
+        [data-theme="dark"] .section-label { background: rgba(22,163,74,.18); color: var(--green-mid); }
+        .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; margin-bottom: 16px; line-height: 1.2; }
+        .section-sub { font-size: 1.05rem; color: var(--text-m); max-width: 580px; }
+
+        /* ── IMPACT METRICS ── */
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+        .metric-card {
+            background: var(--surface); border-radius: var(--r-xl);
+            padding: 36px 28px; text-align: center;
+            box-shadow: var(--sh-sm); border: 1px solid var(--border);
+            position: relative; overflow: hidden;
+            transition: transform .3s var(--ease), box-shadow .3s;
+        }
+        .metric-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+        }
+        .metric-card:nth-child(1)::before { background: var(--green-hope); }
+        .metric-card:nth-child(2)::before { background: var(--coral-cta); }
+        .metric-card:nth-child(3)::before { background: var(--blue-trust); }
+        .metric-card:nth-child(4)::before { background: var(--gold); }
+        .metric-card:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); }
+        .metric-icon { font-size: 2.4rem; margin-bottom: 12px; }
+        .metric-num {
+            font-family: var(--font-h); font-size: 2.8rem; font-weight: 900;
+            color: var(--green-hope); line-height: 1;
+        }
+        .metric-card:nth-child(2) .metric-num { color: var(--coral-cta); }
+        .metric-card:nth-child(3) .metric-num { color: var(--blue-trust); }
+        .metric-card:nth-child(4) .metric-num { color: var(--gold); }
+        .metric-label { font-size: 14px; font-weight: 600; color: var(--text-b); margin-top: 6px; }
+        .metric-sub { font-size: 12px; color: var(--text-m); margin-top: 4px; }
+
+        /* ── PROGRAMS ── */
+        .programs-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 20px; }
+        .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .program-card {
+            background: var(--surface); border-radius: var(--r-xl);
+            overflow: hidden; box-shadow: var(--sh-sm); border: 1px solid var(--border);
+            transition: transform .35s var(--ease), box-shadow .35s;
+            position: relative;
+        }
+        .program-card:hover { transform: translateY(-8px); box-shadow: var(--sh-lg); }
+        .program-card-img { aspect-ratio: 16/10; overflow: hidden; }
+        .program-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+        .program-card:hover .program-card-img img { transform: scale(1.06); }
+        .program-card-badge {
+            position: absolute; top: 14px; left: 14px;
+            background: var(--green-hope); color: #fff;
+            border-radius: 50px; padding: 4px 12px; font-size: 11px; font-weight: 700;
+        }
+        .program-card-content { padding: 26px; }
+        .program-icon { font-size: 2rem; margin-bottom: 12px; }
+        .program-card-content h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: 10px; }
+        .program-card-content p { font-size: .92rem; color: var(--text-m); line-height: 1.7; }
+
+        /* ── MILESTONES (Hitos) ── */
+        .milestones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+        .milestone-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--r-lg); padding: 22px 20px; text-align: center;
+            transition: all .3s;
+        }
+        .milestone-card:hover { border-color: var(--blue-mid); box-shadow: var(--sh-sm); }
+        .milestone-card .m-icon { font-size: 2rem; margin-bottom: 10px; }
+        .milestone-card h4 { font-size: .95rem; font-weight: 800; margin-bottom: 6px; }
+        .milestone-card p { font-size: .82rem; color: var(--text-m); }
+
+        /* ── TESTIMONIO ── */
+        .testimonial-section { background: linear-gradient(135deg, var(--petroleum) 0%, var(--blue-dark) 60%, var(--green-dark) 100%); }
+        .testimonial-section * { color: #fff !important; }
+        .testimonial-inner {
+            display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center;
+        }
+        .testimonial-photo { border-radius: var(--r-xl); overflow: hidden; box-shadow: 0 20px 48px rgba(0,0,0,.5); }
+        .testimonial-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+        .testimonial-quote { font-family: var(--font-h); font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-weight: 700; line-height: 1.55; margin: 24px 0; position: relative; padding-left: 28px; }
+        .testimonial-quote::before { content: '"'; position: absolute; left: 0; top: -8px; font-size: 4rem; color: var(--green-mid) !important; font-family: Georgia, serif; line-height: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
+        .author-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--green-hope); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+        .author-name { font-weight: 800; font-size: 1rem; }
+        .author-role { font-size: .85rem; opacity: .7; }
+
+        /* ── DONACION ── */
+        .donation-section { background: linear-gradient(to bottom right, var(--green-xlight), var(--blue-light)); }
+        [data-theme="dark"] .donation-section { background: var(--surface-alt); }
+        .donation-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+        .donation-intro .section-title { color: var(--green-dark); }
+        [data-theme="dark"] .donation-intro .section-title { color: var(--green-mid); }
+        .impact-matrix { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+        .impact-row {
+            display: flex; align-items: center; gap: 16px;
+            background: var(--surface); border-radius: var(--r-lg);
+            padding: 18px 22px; border: 1px solid var(--border);
+            box-shadow: var(--sh-sm); transition: all .3s;
+        }
+        .impact-row:hover { border-color: var(--green-hope); transform: translateX(4px); }
+        .impact-amount {
+            min-width: 120px; font-family: var(--font-h); font-weight: 900;
+            color: var(--green-hope); font-size: 1rem;
+        }
+        .impact-separator { color: var(--border); font-size: 1.4rem; }
+        .impact-desc { font-size: .92rem; color: var(--text-b); font-weight: 500; }
+
+        /* Módulo SIPAP */
+        .sipap-card {
+            background: var(--surface); border-radius: var(--r-xl);
+            box-shadow: var(--sh-md); border: 1px solid var(--border); overflow: hidden;
+        }
+        .sipap-header {
+            background: linear-gradient(135deg, var(--green-hope), var(--blue-trust));
+            padding: 24px 28px; color: #fff;
+        }
+        .sipap-header h3 { font-size: 1.2rem; font-weight: 900; color: #fff; }
+        .sipap-header p { font-size: .88rem; color: rgba(255,255,255,.8); margin-top: 4px; }
+        .sipap-tabs { display: flex; border-bottom: 1px solid var(--border); }
+        .sipap-tab {
+            flex: 1; padding: 14px; text-align: center; font-size: 13px; font-weight: 700;
+            cursor: pointer; border: none; background: none; color: var(--text-m);
+            transition: all .25s; border-bottom: 2px solid transparent;
+        }
+        .sipap-tab.active { color: var(--green-hope); border-bottom-color: var(--green-hope); }
+        .sipap-body { padding: 28px; }
+        .sipap-panel { display: none; }
+        .sipap-panel.active { display: block; }
+        .sipap-field { margin-bottom: 18px; }
+        .sipap-field label { font-size: 11px; font-weight: 700; color: var(--text-m); text-transform: uppercase; letter-spacing: .6px; display: block; margin-bottom: 6px; }
+        .sipap-value {
+            font-size: 1rem; font-weight: 700; color: var(--text-h);
+            background: var(--surface-alt); padding: 12px 16px; border-radius: var(--r-sm);
+            border: 1px solid var(--border);
+        }
+        .copy-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--green-hope); color: #fff; border: none;
+            padding: 13px 22px; border-radius: var(--r-md); cursor: pointer;
+            font-size: 14px; font-weight: 700; width: 100%; justify-content: center;
+            margin-top: 8px; transition: all .3s var(--ease);
+        }
+        .copy-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(22,163,74,.4); }
+        .qr-placeholder {
+            width: 100%; aspect-ratio: 1; background: var(--surface-alt);
+            border-radius: var(--r-md); border: 2px dashed var(--border);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: var(--text-m); font-size: 13px; text-align: center; padding: 20px;
+        }
+        .qr-placeholder .qr-icon { font-size: 3rem; margin-bottom: 10px; }
+
+        /* ── RSE / EMPRESAS ── */
+        .rse-section { background: linear-gradient(135deg, var(--petroleum) 0%, var(--petroleum-mid) 100%); }
+        .rse-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
+        .rse-content * { color: #fff !important; }
+        .rse-content .section-label { background: rgba(245,158,11,.2); color: var(--gold-bright) !important; }
+        .rse-content .section-title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+        .rse-badges { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+        .rse-badge {
+            display: flex; align-items: center; gap: 16px;
+            background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+            border-radius: var(--r-lg); padding: 18px 22px;
+        }
+        .rse-badge-icon { font-size: 1.8rem; flex-shrink: 0; }
+        .rse-badge-text strong { display: block; font-size: .92rem; font-weight: 800; color: #fff !important; }
+        .rse-badge-text span { font-size: .82rem; color: rgba(255,255,255,.65) !important; }
+        .rse-ctas { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+        .rse-visual {
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+            border-radius: var(--r-xl); padding: 36px 32px; text-align: center;
+        }
+        .rse-visual h3 { color: #fff !important; font-size: 1.3rem; margin-bottom: 20px; }
+        .deduct-highlight {
+            background: linear-gradient(135deg, var(--green-hope), var(--blue-trust));
+            border-radius: var(--r-lg); padding: 28px; margin-bottom: 20px;
             text-align: center;
         }
-
-        .transparency-item h5 {
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--text-heading);
-            margin-bottom: 6px;
+        .deduct-highlight .pct { font-family: var(--font-h); font-size: 4rem; font-weight: 900; color: #fff !important; line-height: 1; }
+        .deduct-highlight .pct-label { font-size: .88rem; color: rgba(255,255,255,.85) !important; margin-top: 4px; }
+        .ley-badge {
+            background: rgba(255,255,255,.1); border-radius: var(--r-md); padding: 12px 16px;
+            font-size: .82rem; color: rgba(255,255,255,.8) !important;
         }
 
-        .transparency-item p {
-            font-size: 12.5px;
-            color: var(--text-muted);
+        /* ── TRANSPARENCIA ── */
+        .transparency-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .transp-card {
+            background: var(--surface); border-radius: var(--r-xl);
+            padding: 30px 26px; border: 1px solid var(--border);
+            box-shadow: var(--sh-sm); transition: all .3s;
+            text-align: center;
         }
-
-        .alliance-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 24px;
+        .transp-card:hover { border-color: var(--gold); box-shadow: 0 12px 36px rgba(217,119,6,.12); transform: translateY(-4px); }
+        .transp-icon { font-size: 2.4rem; margin-bottom: 16px; }
+        .transp-card h3 { font-size: 1rem; font-weight: 900; margin-bottom: 8px; }
+        .transp-card p { font-size: .85rem; color: var(--text-m); margin-bottom: 16px; line-height: 1.6; }
+        .transp-value {
+            display: inline-block; background: var(--gold-light); color: var(--gold);
+            border-radius: var(--r-sm); padding: 6px 14px; font-size: .85rem; font-weight: 800;
         }
+        [data-theme="dark"] .transp-value { background: rgba(217,119,6,.18); }
 
-        .alliance-pill {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 13.5px;
-            font-weight: 700;
-            color: var(--petroleum-blue);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .contact-info-box {
-            background: linear-gradient(135deg, var(--petroleum-dark) 0%, var(--petroleum-blue) 100%);
-            color: #ffffff;
-            border-radius: var(--radius-lg);
-            padding: 36px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
+        /* ── CONTACTO ── */
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 48px; }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
         .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 20px;
+            display: flex; gap: 16px; align-items: flex-start;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--r-lg); padding: 20px 22px; box-shadow: var(--sh-sm);
         }
+        .contact-item-icon { font-size: 1.6rem; flex-shrink: 0; }
+        .contact-item h4 { font-size: .88rem; font-weight: 800; text-transform: uppercase; color: var(--text-m); letter-spacing: .5px; margin-bottom: 4px; }
+        .contact-item p { font-size: .95rem; font-weight: 600; color: var(--text-b); }
 
-        .contact-item-icon {
-            font-size: 20px;
-            background: rgba(255,255,255,0.15);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .contact-form {
+            background: var(--surface); border-radius: var(--r-xl); padding: 36px 32px;
+            box-shadow: var(--sh-md); border: 1px solid var(--border);
         }
-
-        .contact-item h5 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2px;
+        .contact-form h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 24px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--text-m); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 7px; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 13px 16px; border-radius: var(--r-md);
+            border: 1.5px solid var(--border); background: var(--bg); color: var(--text-b);
+            font-family: var(--font-b); font-size: .95rem; transition: border .25s, box-shadow .25s;
         }
-
-        .contact-item p {
-            font-size: 13.5px;
-            color: rgba(255,255,255,0.85);
-            line-height: 1.5;
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: var(--green-hope);
+            box-shadow: 0 0 0 3px rgba(22,163,74,.12);
         }
+        .form-group textarea { resize: vertical; min-height: 110px; }
 
-        .contact-form-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 36px;
-            box-shadow: var(--shadow-sm);
+        /* ── FOOTER ── */
+        footer { background: var(--petroleum); color: rgba(255,255,255,.7); padding: 60px 24px 30px; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer-brand img { height: 48px; width: auto; margin-bottom: 16px; }
+        .footer-brand p { font-size: .88rem; line-height: 1.7; }
+        .footer-col h4 { font-size: .88rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 16px; }
+        .footer-col a { display: block; font-size: .88rem; color: rgba(255,255,255,.6); margin-bottom: 8px; transition: color .2s; }
+        .footer-col a:hover { color: var(--green-mid); }
+        .footer-bottom {
+            max-width: 1200px; margin: 0 auto; padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
         }
+        .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.5); }
+        .footer-ruc { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-sm); padding: 6px 14px; font-size: .78rem; color: rgba(255,255,255,.6); }
+        .tricolor { height: 5px; background: linear-gradient(90deg, #D52B1E 33%, #fff 33%, #fff 66%, #0038A8 66%); border-radius: 0 0 3px 3px; }
 
-        .form-group {
-            margin-bottom: 18px;
+        /* ── WHATSAPP FLOAT ── */
+        .wa-float {
+            position: fixed; bottom: 28px; left: 28px; z-index: 900;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #25d366; display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; box-shadow: 0 8px 24px rgba(37,211,102,.5);
+            transition: transform .3s var(--ease), box-shadow .3s;
         }
+        .wa-float:hover { transform: scale(1.1); box-shadow: 0 14px 32px rgba(37,211,102,.65); }
 
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 6px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 16px;
-            background: var(--bg-body);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            color: var(--text-heading);
-            font-size: 14px;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-green);
-        }
-
-        .map-section-direct {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .map-iframe-box iframe {
-            width: 100%;
-            border: none;
-            border-radius: var(--radius-md);
-        }
-
-        footer {
-            background: #060b13;
-            color: #94a3b8;
-            padding: 65px 24px 35px 24px;
-            border-top: 1px solid #1e293b;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        .tricolor-stripe-web {
-            height: 4px;
-            width: 140px;
-            background: linear-gradient(90deg, var(--red-accent) 0%, #ffffff 50%, var(--primary-green) 100%);
-            border-radius: 2px;
-        }
-
-        .footer-credit {
-            font-size: 12px;
-            color: #64748b;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25d366;
-            color: #ffffff;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            text-decoration: none;
-        }
-
+        /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
-            .hero-container, .contact-grid { grid-template-columns: 1fr; }
-            .grid-3col, .projects-grid, .gallery-grid, .transparency-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-content { grid-template-columns: 1fr; gap: 48px; }
+            .hero-visual { display: none; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .programs-grid { grid-template-columns: repeat(2, 1fr); }
+            .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-inner { grid-template-columns: 1fr; }
+            .testimonial-photo { max-width: 280px; }
+            .donation-layout { grid-template-columns: 1fr; }
+            .rse-layout { grid-template-columns: 1fr; }
+            .transparency-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-layout { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+            .transparency-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .hero-ctas { flex-direction: column; }
+            .btn-lg { width: 100%; justify-content: center; }
         }
 
-        @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .grid-3col, .projects-grid, .gallery-grid, .transparency-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 34px; }
+        /* ── MOBILE NAV ── */
+        .mobile-nav {
+            position: fixed; top: 0; right: 0; bottom: 0; width: 280px;
+            background: var(--surface); z-index: 1500; padding: 80px 28px 40px;
+            transform: translateX(100%); transition: transform .4s var(--ease);
+            box-shadow: var(--sh-lg);
+            display: flex; flex-direction: column; gap: 8px;
         }
+        .mobile-nav.open { transform: translateX(0); }
+        .mobile-nav a { padding: 14px; border-radius: var(--r-md); font-weight: 700; font-size: 1rem; color: var(--text-b); transition: all .25s; }
+        .mobile-nav a:hover { background: var(--surface-alt); color: var(--green-hope); }
+        .mobile-overlay { position: fixed; inset: 0; z-index: 1490; background: rgba(0,0,0,.5); display: none; }
+        .mobile-overlay.open { display: block; }
     </style>
 </head>
 <body>
 
-    <div id="scroll-progress"></div>
+<div id="scroll-progress"></div>
 
-    <div id="toast" class="toast-notification">
-        <span>✅</span>
-        <span id="toast-text">Copiado al portapapeles</span>
+<!-- TOAST -->
+<div class="toast" id="toast" role="alert" aria-live="polite">
+    <span id="toast-icon">✅</span>
+    <span id="toast-text">¡Copiado!</span>
+</div>
+
+<!-- MODAL DONACIÓN -->
+<div class="modal-backdrop" id="modal-donacion" role="dialog" aria-modal="true" aria-labelledby="modal-donacion-title">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-donacion')" aria-label="Cerrar">✕</button>
+    <div class="sipap-card" style="box-shadow:none;border:none;">
+      <div class="sipap-header">
+        <h3 id="modal-donacion-title">❤️ Centro de Donación Transparente</h3>
+        <p>Transferí directamente. Cada guaraní llega a quienes más lo necesitan.</p>
+      </div>
+      <div class="sipap-tabs">
+        <button class="sipap-tab active" onclick="switchTab('personas')">👤 Personas</button>
+        <button class="sipap-tab" onclick="switchTab('empresas')">🏢 Empresas / RSE</button>
+        <button class="sipap-tab" onclick="switchTab('qr')">📱 QR / Bancard</button>
+      </div>
+      <div class="sipap-body">
+        <!-- PERSONAS -->
+        <div class="sipap-panel active" id="panel-personas">
+          <div class="sipap-field"><label>Titular de la Cuenta</label><div class="sipap-value">Fundación Espacio de Vida</div></div>
+          <div class="sipap-field"><label>RUC / Identificación</label><div class="sipap-value">80087692-0</div></div>
+          <div class="sipap-field"><label>Banco Principal</label><div class="sipap-value">Visión Banco S.A.E.C.A.</div></div>
+          <div class="sipap-field"><label>Banco Alternativo</label><div class="sipap-value">Banco Continental S.A.E.C.A.</div></div>
+          <div class="sipap-field"><label>Sistema de Pago</label><div class="sipap-value">SIPAP / Transferencia Bancaria</div></div>
+          <button class="copy-btn" onclick="copyData('Fundación Espacio de Vida | RUC: 80087692-0 | Visión Banco S.A.E.C.A. | SIPAP', 'Datos bancarios')">📋 Copiar Datos Bancarios en 1 Clic</button>
+          <p style="font-size:.8rem;color:var(--text-m);margin-top:12px;text-align:center;">Después de transferir, enviá el comprobante al: <strong>0961.298.912</strong></p>
+        </div>
+        <!-- EMPRESAS -->
+        <div class="sipap-panel" id="panel-empresas">
+          <div style="background:var(--gold-light);border-radius:var(--r-md);padding:18px;margin-bottom:20px;border:1px solid var(--gold);">
+            <p style="font-size:.88rem;font-weight:700;color:var(--gold);">💼 Beneficio Fiscal para Empresas</p>
+            <p style="font-size:.82rem;margin-top:6px;color:var(--text-b);">Las donaciones a la Fundación Espacio de Vida son <strong>100% deducibles del IRE</strong> bajo el Art. 15, num. 20 de la Ley N° 6380/19 (Modernización y Simplificación del Sistema Tributario Nacional).</p>
+          </div>
+          <div class="sipap-field"><label>Personería Jurídica</label><div class="sipap-value">Nº 7531/2017</div></div>
+          <div class="sipap-field"><label>Decreto Presidencial</label><div class="sipap-value">N° 1913/2014</div></div>
+          <div class="sipap-field"><label>RUC (DNIT)</label><div class="sipap-value">80087692-0 (Activo y Validado)</div></div>
+          <a href="https://wa.me/595961298912?text=Hola,%20represento%20a%20una%20empresa%20y%20quisiera%20coordinar%20una%20alianza%20de%20RSE%20con%20la%20Fundaci%C3%B3n%20Espacio%20de%20Vida." target="_blank" class="copy-btn" style="background:var(--green-hope);text-decoration:none;">💬 Contactar para Alianza Corporativa (WhatsApp)</a>
+        </div>
+        <!-- QR -->
+        <div class="sipap-panel" id="panel-qr">
+          <div class="qr-placeholder">
+            <div class="qr-icon">📱</div>
+            <strong>Código QR Bancard / SIPAP</strong>
+            <p style="margin-top:8px;">Próximamente disponible para escanear desde tu app bancaria o billetera electrónica.</p>
+          </div>
+          <button class="copy-btn" style="margin-top:16px;" onclick="copyData('80087692-0', 'RUC')">📋 Copiar RUC para Transferencia</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil">
+    <a href="#impacto" onclick="closeMobileNav()">📊 Nuestro Impacto</a>
+    <a href="#programas" onclick="closeMobileNav()">🐴 Programas</a>
+    <a href="#donacion" onclick="closeMobileNav()">❤️ Donar</a>
+    <a href="#transparencia" onclick="closeMobileNav()">🛡️ Transparencia</a>
+    <a href="#empresas" onclick="closeMobileNav()">🏢 Empresas / RSE</a>
+    <a href="#contacto" onclick="closeMobileNav()">📞 Contacto</a>
+    <button class="btn btn-coral" onclick="openModal('modal-donacion');closeMobileNav();" style="margin-top:16px;">❤️ Donar Ahora</button>
+</nav>
+
+<!-- HEADER -->
+<header id="main-header">
+  <div class="nav-inner">
+    <a href="#" class="brand" aria-label="Fundación Espacio de Vida – Inicio">
+      <img src="../image/logo_espacio_de_vida.png" alt="Logo Fundación Espacio de Vida" loading="eager">
+      <div>
+        <div class="brand-name">Fundación Espacio de Vida</div>
+        <div class="brand-tagline">Lambaré, Paraguay · Desde 2013</div>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#impacto">Impacto</a>
+      <a href="#programas">Programas</a>
+      <a href="#donacion">Donar</a>
+      <a href="#transparencia">Transparencia</a>
+      <a href="#empresas">RSE</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar modo oscuro/claro" title="Modo Oscuro/Claro">🌙</button>
+      <button class="btn btn-coral btn-sm" onclick="openModal('modal-donacion')" aria-label="Abrir centro de donación">❤️ Donar</button>
+      <button class="hamburger" onclick="openMobileNav()" aria-label="Abrir menú" id="hamburger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio" aria-label="Sección principal">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge reveal">
+        <span>🐴 Equinoterapia</span> Desde 2013 · Lambaré, Paraguay
+      </div>
+      <h1 class="reveal reveal-delay-1">
+        Transformamos capacidades en <em>futuros independientes</em>
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        Brindamos equinoterapia, inclusión escolar y acompañamiento integral a niños y jóvenes con discapacidad y a sus familias en el Departamento Central de Paraguay.
+      </p>
+      <div class="hero-ctas reveal reveal-delay-3">
+        <button class="btn btn-coral btn-lg" onclick="openModal('modal-donacion')" aria-label="Donar o apadrinar">
+          ❤️ Quiero Donar / Apadrinar
+        </button>
+        <a href="#programas" class="btn btn-ghost btn-lg" aria-label="Conocer programas de equinoterapia">
+          🐴 Conocer Nuestro Trabajo
+        </a>
+      </div>
+      <div class="hero-stats reveal reveal-delay-4">
+        <div class="hero-stat-card">
+          <div class="stat-num">+12</div>
+          <div class="stat-label">Años en Lambaré</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-num">+500</div>
+          <div class="stat-label">Familias Acompañadas</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-num">+1.500</div>
+          <div class="stat-label">Sesiones Brindadas</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Alianza Escolar ARASY</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-main">
+        <img src="../image/proyecto_equinoterapia.jpg" alt="Niño en sesión de equinoterapia en Fundación Espacio de Vida, Lambaré" loading="eager">
+      </div>
+      <div class="hero-trust-row">
+        <div class="trust-badge">
+          <div class="tb-icon">🛡️</div>
+          <div class="tb-text">RUC Verificado<br>80087692-0</div>
+        </div>
+        <div class="trust-badge">
+          <div class="tb-icon">📜</div>
+          <div class="tb-text">Decreto N°<br>1913/2014</div>
+        </div>
+        <div class="trust-badge">
+          <div class="tb-icon">💼</div>
+          <div class="tb-text">IRE Deducible<br>Ley 6380/19</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="section" id="impacto" aria-labelledby="impacto-title">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">📊 Prueba de Impacto</span>
+      <h2 class="section-title" id="impacto-title">Doce años de transformación medible</h2>
+      <p class="section-sub">No son números de vanidad. Son vidas reales, familias acompañadas y sesiones de terapia que cambiaron destinos en nuestra comunidad.</p>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card reveal reveal-delay-1">
+        <div class="metric-icon">📅</div>
+        <div class="metric-num">+12</div>
+        <div class="metric-label">Años ininterrumpidos</div>
+        <div class="metric-sub">Desde 2013 al servicio de la comunidad</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-2">
+        <div class="metric-icon">👨‍👩‍👧</div>
+        <div class="metric-num">+500</div>
+        <div class="metric-label">Familias atendidas</div>
+        <div class="metric-sub">Niños y jóvenes con discapacidad incluidos</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-3">
+        <div class="metric-icon">🐴</div>
+        <div class="metric-num">+1.500</div>
+        <div class="metric-label">Sesiones terapéuticas</div>
+        <div class="metric-sub">Equinoterapia, estimulación y apoyo escolar</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-4">
+        <div class="metric-icon">🏫</div>
+        <div class="metric-num">1</div>
+        <div class="metric-label">Alianza escolar activa</div>
+        <div class="metric-sub">Escuela ARASY – inclusión educativa permanente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAS -->
+<section class="section section-alt" id="programas" aria-labelledby="programas-title">
+  <div class="container">
+    <div class="programs-header">
+      <div class="reveal">
+        <span class="section-label">🐴 Programas Permanentes</span>
+        <h2 class="section-title" id="programas-title">Lo que hacemos cada día</h2>
+        <p class="section-sub">Servicios terapéuticos y educativos continuos, no eventos aislados. Aquí el impacto es acumulativo.</p>
+      </div>
+    </div>
+    <div class="programs-grid">
+      <article class="program-card reveal reveal-delay-1">
+        <div class="program-card-img">
+          <img src="../image/proyecto_equinoterapia.jpg" alt="Sesión de equinoterapia asistida – Fundación Espacio de Vida" loading="lazy">
+        </div>
+        <span class="program-card-badge">⭐ Programa Estrella</span>
+        <div class="program-card-content">
+          <div class="program-icon">🐴</div>
+          <h3>Equinoterapia Asistida</h3>
+          <p>La terapia asistida con caballos estimula el desarrollo neuromuscular, cognitivo y emocional de niños y jóvenes con discapacidad. Cada sesión es un paso hacia mayor autonomía e integración social.</p>
+        </div>
+      </article>
+      <article class="program-card reveal reveal-delay-2">
+        <div class="program-card-img">
+          <img src="../image/proyecto_autismo.jpg" alt="Atención y acompañamiento a niños del espectro autista" loading="lazy">
+        </div>
+        <span class="program-card-badge">🧩 Inclusión</span>
+        <div class="program-card-content">
+          <div class="program-icon">🧩</div>
+          <h3>Atención al Espectro Autista</h3>
+          <p>Acompañamiento psicopedagógico especializado a niños y jóvenes con Trastorno del Espectro Autista (TEA), en alianza permanente con la Escuela ARASY para su inclusión educativa plena.</p>
+        </div>
+      </article>
+      <article class="program-card reveal reveal-delay-3">
+        <div class="program-card-img">
+          <img src="../image/quienes_somos.jpg" alt="Estimulación temprana y apoyo familiar – Espacio de Vida" loading="lazy">
+        </div>
+        <span class="program-card-badge">💚 Familia</span>
+        <div class="program-card-content">
+          <div class="program-icon">👨‍👩‍👧</div>
+          <h3>Estimulación Temprana y Apoyo Familiar</h3>
+          <p>Contención integral para padres, madres y cuidadores. Talleres de orientación, grupos de apoyo y acompañamiento en el proceso de crianza inclusiva con recursos prácticos y dignidad.</p>
+        </div>
+      </article>
+      <article class="program-card reveal reveal-delay-1">
+        <div class="program-card-img">
+          <img src="../image/proyecto_vida_sana.jpg" alt="Programa Vida Sana – Hábitos saludables y bienestar comunitario" loading="lazy">
+        </div>
+        <span class="program-card-badge">🌿 Salud</span>
+        <div class="program-card-content">
+          <div class="program-icon">🌿</div>
+          <h3>Vida Sana</h3>
+          <p>Programa de hábitos saludables, nutrición y bienestar físico orientado a beneficiarios y familias de la comunidad de Lambaré y zonas aledañas del Departamento Central.</p>
+        </div>
+      </article>
+      <article class="program-card reveal reveal-delay-2">
+        <div class="program-card-img">
+          <img src="../image/proyecto_manos_solidarias.jpg" alt="Manos Solidarias – Donaciones y apoyo a familias vulnerables" loading="lazy">
+        </div>
+        <span class="program-card-badge">🤝 Solidaridad</span>
+        <div class="program-card-content">
+          <div class="program-icon">🤝</div>
+          <h3>Manos Solidarias</h3>
+          <p>Coordinación de donaciones, colectas y entrega de recursos básicos a familias en situación de vulnerabilidad. Red de voluntariado activa y comprometida con la comunidad.</p>
+        </div>
+      </article>
+      <article class="program-card reveal reveal-delay-3">
+        <div class="program-card-img">
+          <img src="../image/proyecto_cumpliendo_sueno.jpg" alt="Cumpliendo el Sueño – Celebración y reconocimiento de logros" loading="lazy">
+        </div>
+        <span class="program-card-badge">🌟 Reconocimiento</span>
+        <div class="program-card-content">
+          <div class="program-icon">🌟</div>
+          <h3>Cumpliendo un Sueño</h3>
+          <p>Programa de reconocimiento de hitos y logros de los beneficiarios. Celebramos cada avance, cada paso y cada sueño alcanzado como comunidad unida y comprometida.</p>
+        </div>
+      </article>
     </div>
 
-    <!-- Header Navbar -->
-    <header>
-        <div class="nav-container">
-            <a href="#inicio" class="brand-logo">
-                <img src="../../image/logo_espacio_de_vida.png" alt="Fundación Espacio de Vida Logo">
-                <div class="brand-text">
-                    <h1>Espacio de Vida</h1>
-                    <span>Desarrollo Sostenible &bull; 2013</span>
-                </div>
-            </a>
-
-            <ul class="nav-menu">
-                <li><a href="#somos" class="nav-link">Somos</a></li>
-                <li><a href="#mision-vision" class="nav-link">Misión y Visión</a></li>
-                <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
-                <li><a href="#como-ayudamos" class="nav-link">¿Cómo Ayudamos?</a></li>
-                <li><a href="#proyectos" class="nav-link">Programas</a></li>
-                <li><a href="#galeria" class="nav-link">Galería</a></li>
-                <li><a href="#transparencia" class="nav-link">Transparencia</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <button class="theme-toggle-btn" onclick="toggleTheme()" title="Cambiar Tema">🌓</button>
-                <a href="#contacto" class="btn-cta-donar">
-                    <span>❤️</span> Donar Ahora
-                </a>
-            </div>
+    <!-- HITOS HISTORICOS -->
+    <div style="margin-top: 72px;">
+      <div class="reveal">
+        <span class="section-label" style="background:var(--blue-light);color:var(--blue-dark);">📖 Trayectoria Comunitaria</span>
+        <h3 style="font-size:1.8rem;font-weight:900;margin:14px 0 8px;">Hitos y actividades comunitarias</h3>
+        <p style="color:var(--text-m);max-width:520px;">Momentos que forjaron nuestra identidad a lo largo del tiempo.</p>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card reveal reveal-delay-1">
+          <div class="m-icon">🚒</div>
+          <h4>Donación a Bomberos</h4>
+          <p>Apoyo institucional a la Brigada de Bomberos Voluntarios de la comunidad.</p>
         </div>
-    </header>
-
-    <!-- Hero Section con Lema Institucional e Imagen Local -->
-    <section id="inicio" class="hero">
-        <div class="hero-container">
-            <div>
-                <div class="hero-motto-badge">🌱 “Por la vida, el hogar y el desarrollo sostenible”</div>
-                <h1 class="hero-title">Fundación <span>Espacio de Vida</span></h1>
-                <p class="hero-subtitle">Organización sin fines de lucro creada en 2013 en Lambaré, Paraguay. Trabajamos para desarrollar y apoyar a entidades y personas con necesidades para que tengan acceso y oportunidades para participar completamente en la vida social y cultural, enfocados principalmente en sus capacidades.</p>
-                <div class="hero-buttons">
-                    <a href="#proyectos" class="btn-hero-primary">Ver Programas e Impacto 🚀</a>
-                    <a href="#contacto" class="btn-hero-secondary">Ser Voluntario 🤝</a>
-                    <a href="#contacto" class="btn-hero-secondary" style="border-color: var(--gold); color: var(--gold);">Contactar ✉️</a>
-                </div>
-            </div>
-
-            <div class="hero-card-widget">
-                <img src="../image/hero_banner.jpg" alt="Hero Banner Fundación Espacio de Vida" class="hero-banner-img">
-                <div class="hero-card-body">
-                    <div class="hero-card-header">
-                        <img src="../../image/logo_espacio_de_vida.png" alt="Logo Oficial Fundación Espacio de Vida">
-                        <div class="hero-card-info">
-                            <h3>Fundación Espacio de Vida</h3>
-                            <p>Fundada en 2013 &bull; Lambaré, Paraguay</p>
-                        </div>
-                    </div>
-                    <div class="hero-stats-grid">
-                        <div class="hero-stat-box"><strong>2013</strong><span>Año de Creación</span></div>
-                        <div class="hero-stat-box"><strong>100%</strong><span>Enfoque en Capacidades</span></div>
-                        <div class="hero-stat-box"><strong>Infanto</strong><span>Juvenil e Inclusión</span></div>
-                        <div class="hero-stat-box"><strong>Lambaré</strong><span>Departamento Central</span></div>
-                    </div>
-                </div>
-            </div>
+        <div class="milestone-card reveal reveal-delay-2">
+          <div class="m-icon">🎪</div>
+          <h4>Festival por la Vida</h4>
+          <p>Eventos culturales de recaudación y conciencia comunitaria a lo largo de los años.</p>
         </div>
-    </section>
-
-    <!-- Sección 1: Quiénes Somos con Imagen Local -->
-    <section id="somos">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">NUESTRA HISTORIA</span>
-                <h2 class="section-title">Quiénes Somos</h2>
-                <p class="section-desc">La Fundación Espacio de Vida fue creada en 2013 como una organización sin fines de lucro. Trabaja para desarrollar y apoyar a entidades y personas con necesidades para que tengan acceso y oportunidades para participar completamente en la vida, social y cultural, no solamente concentrados en sus necesidades, sino principalmente enfocados en sus capacidades.</p>
-            </div>
-
-            <div class="grid-3col" style="grid-template-columns: 1fr 1fr; max-width: 960px; margin: 0 auto;">
-                <div class="info-card">
-                    <img src="../image/quienes_somos.jpg" alt="Quiénes Somos Fundación Espacio de Vida" class="info-card-img">
-                    <div class="info-card-content">
-                        <h3>Organización Sin Fines de Lucro</h3>
-                        <p>Trabajando incansablemente desde 2013 en la ciudad de Lambaré por el bienestar material, espiritual y cultural de niños, jóvenes y familias.</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <img src="../image/mision_vision.jpg" alt="Enfoque en Capacidades" class="info-card-img">
-                    <div class="info-card-content">
-                        <h3>Enfoque en Capacidades Humanas</h3>
-                        <p>Fomentamos el desarrollo personal y la inclusión social centrándonos en el potencial único de cada persona.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="milestone-card reveal reveal-delay-3">
+          <div class="m-icon">👶</div>
+          <h4>Semana del Niño</h4>
+          <p>Celebraciones anuales dedicadas a los niños de la comunidad de Lambaré.</p>
         </div>
-    </section>
-
-    <!-- Sección 2: Misión y Visión (Lenguaje Inspirador) -->
-    <section id="mision-vision" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">PROPÓSITO INSTITUCIONAL</span>
-                <h2 class="section-title">Misión & Visión</h2>
-            </div>
-
-            <div class="grid-3col" style="grid-template-columns: 1fr 1fr;">
-                <div class="info-card">
-                    <div class="info-card-content">
-                        <span class="section-tag">NUESTRA MISIÓN</span>
-                        <h3>Misión</h3>
-                        <p>La Fundación Espacio de Vida tiene como misión la provisión de espacios y recursos que compensen las dificultades de las personas con capacidades diferentes que le favorezcan un adecuado desarrollo personal y social, pueda llegar a su plenitud e integrarse a su entorno, haciéndose partícipe de los compromisos de su comunidad. Teniendo así, una vida digna y útil dentro de la sociedad a pesar de sus diferencias individuales siendo cada una, única e irrepetible.</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-card-content">
-                        <span class="section-tag">NUESTRA VISIÓN</span>
-                        <h3>Visión</h3>
-                        <p>Crear un Espacio INFANTO-JUVENIL, tendiente a la Estimulación de Potencialidades y al desarrollo de la Creatividad, el Aprendizaje y el Deporte sin perder de vista la Inclusión del niño y joven a la sociedad.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="milestone-card reveal reveal-delay-4">
+          <div class="m-icon">🌊</div>
+          <h4>Emergencias Comunitarias</h4>
+          <p>Respuesta solidaria ante inundaciones y situaciones de emergencia en el Departamento Central.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección 3: Objetivos y Estrategia Institucional -->
-    <section id="objetivos">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">METAS INSTITUCIONALES</span>
-                <h2 class="section-title">Objetivos y Estrategia Institucional</h2>
-            </div>
-
-            <div class="info-card" style="max-width: 900px; margin: 0 auto; padding: 36px;">
-                <ul class="feature-list">
-                    <li><strong>Asistencia Social:</strong> Asistir a personas de escasos recursos económicos y financieros que tengan por finalidad la rehabilitación de las personas con capacidades diferentes y su integración al medio social, en forma digna y útil.</li>
-                    <li><strong>Defensa de Derechos:</strong> Velar y defender sus derechos.</li>
-                    <li><strong>Inclusión Laboral:</strong> Inclusión laboral y oportunidades de desarrollo autónomo.</li>
-                    <li><strong>Objetivo Principal:</strong> La búsqueda imperiosa de crear el bienestar material, espiritual, moral y cívico de las personas.</li>
-                </ul>
-            </div>
+<!-- TESTIMONIO -->
+<section class="section testimonial-section" id="testimonio" aria-labelledby="testimonio-title">
+  <div class="container">
+    <div class="testimonial-inner">
+      <div class="reveal">
+        <div class="testimonial-photo">
+          <img src="../image/quienes_somos.jpg" alt="Familia de beneficiario de Fundación Espacio de Vida" loading="lazy">
         </div>
-    </section>
-
-    <!-- Sección 4: ¿Cómo ayuda la Fundación? -->
-    <section id="como-ayudamos" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">ACCIONES Y METODOLOGÍA</span>
-                <h2 class="section-title">¿Cómo ayuda la Fundación?</h2>
-            </div>
-
-            <div class="grid-3col">
-                <div class="info-card">
-                    <div class="info-card-content">
-                        <h3>Espacios & Inclusión</h3>
-                        <ul class="feature-list">
-                            <li>Brinda espacios para el apoyo en las necesidades de las personas y favorezcan un adecuado desarrollo personal y social.</li>
-                            <li>Promover, apoyar o realizar actividades que tengan por finalidad la inclusión de las personas.</li>
-                            <li>Ayudar a crear accesos a actividades culturales, demostrando sus habilidades al máximo en forma independiente.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-card-content">
-                        <h3>Formación & Autonomía</h3>
-                        <ul class="feature-list">
-                            <li>La preparación de profesionales que apoyen y ayuden a la formación de las familias de los niños y jóvenes y lograr mayor autonomía e independencia.</li>
-                            <li>Acompañar la preparación para la transición a la vida activa y a la inclusión en la comunidad que le permita desempeñar un rol activo y productivo y satisfacer sus necesidades económicas y personales.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-card-content">
-                        <h3>Desarrollo & Convenios</h3>
-                        <ul class="feature-list">
-                            <li>Formación y desarrollo organizacional con enfoque inclusivo.</li>
-                            <li>Talleres de capacitación y sensibilización.</li>
-                            <li>Formación de profesionales.</li>
-                            <li>Articulación y generación de acciones comunitarias en favor de la inclusión.</li>
-                            <li>Apoya a una escuela con el almuerzo y con especialistas para los alumnos.</li>
-                            <li>Convenios con Instituciones para la Inclusión.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="section-label" style="background:rgba(34,197,94,.18);color:#4ade80;">💬 Testimonio Real</span>
+        <h2 id="testimonio-title" style="margin-top:16px;font-size:clamp(1.4rem,3vw,2rem);">Una voz de nuestra comunidad</h2>
+        <blockquote class="testimonial-quote">
+          Con la equinoterapia, Lucas dio sus primeros pasos firmes y ganó la confianza para ir a la escuela. La Fundación Espacio de Vida no solo apoyó a mi hijo: nos dio esperanza a toda la familia.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">María Gómez</div>
+            <div class="author-role">Mamá de Lucas · Comunidad Lambaré, Paraguay</div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección 5: Galería de Proyectos & Impacto Social (Imágenes Locales de la carpeta ../image/) -->
-    <section id="proyectos">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">ACCIONES PARA ROMPER LAS BARRERAS</span>
-                <h2 class="section-title">Impacto Social & Programas</h2>
-                <p class="section-desc">Programas que nos ayudan a movilizar diferentes sectores de la sociedad buscando generar acciones compartidas que promuevan la inclusión que fortalezcan el cumplimiento de los derechos de las personas. Para lograrlo realizamos acciones de sensibilización, capacitación, pintatas, festivales, talleres y otras actividades con apoyo de instituciones públicas, medios de comunicación, autoridades y la comunidad en general.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #f59e0b, #d97706);">
-                    <img src="../image/proyecto_festival.jpg" alt="Proyecto Festival por un Espacio de Vida" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #fffbeb; color: #d97706;">🎨</div>
-                        <span class="project-tag">CULTURA Y COMUNIDAD</span>
-                        <h4 class="project-title">Proyecto Festival por un Espacio de Vida</h4>
-                        <p class="project-desc">Festival por un espacio de vida a beneficio de la escuela ARASY con más de 15 artistas reconocidos y el apoyo de la municipalidad de Lambaré como Actividad de carácter cultural.</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #06b6d4, #0891b2);">
-                    <img src="../image/proyecto_autismo.jpg" alt="Proyecto Pintando una Sonrisa" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #ecfeff; color: #0891b2;">🧩</div>
-                        <span class="project-tag">AUTISMO E INCLUSIÓN</span>
-                        <h4 class="project-title">Proyecto Pintando una Sonrisa</h4>
-                        <p class="project-desc">Pintata por el día del Autismo con escuelas de Lambaré con el apoyo de figuras públicas de la TV, bomberos voluntarios, Municipalidad de Lambaré y la Iglesia Virgen del Rosario.</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #10b981, #059669);">
-                    <img src="../image/proyecto_manos_solidarias.jpg" alt="Proyecto Manos Solidarias" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #ecfdf5; color: #059669;">🤝</div>
-                        <span class="project-tag">SOLIDARIDAD EN INUNDACIÓN</span>
-                        <h4 class="project-title">Proyecto Manos Solidarias</h4>
-                        <p class="project-desc">Colecta de víveres y ropas para las familias de Yukuty con apoyo de escuela Arasy, el grupo 4x4 y toda la comunidad de Barrio Kennedy en período de inundación.</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #8b5cf6, #6d28d9);">
-                    <img src="../image/proyecto_cumpliendo_sueno.jpg" alt="Proyecto Cumpliendo el Sueño" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #f5f3ff; color: #6d28d9;">👑</div>
-                        <span class="project-tag">INTEGRACIÓN SOCIAL</span>
-                        <h4 class="project-title">Proyecto Cumpliendo el Sueño</h4>
-                        <p class="project-desc">Festejo de 15 años a 5 jovencitas con el apoyo de artistas nacionales del momento (Que Loco, Contramano, DJ-Rata, Las Culisueltas y Monchi Papa).</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #ef4444, #dc2626);">
-                    <img src="../image/proyecto_bomberos.jpg" alt="Proyecto Bomberos por un Día" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #fef2f2; color: #dc2626;">👨‍🚒</div>
-                        <span class="project-tag">APOYO PEDAGÓGICO</span>
-                        <h4 class="project-title">Proyecto Bomberos por un Día</h4>
-                        <p class="project-desc">Apoyando el área pedagógica de la escuela y llevando a los Bomberos a Instituciones educativas.</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #3b82f6, #2563eb);">
-                    <img src="../image/proyecto_vida_sana.jpg" alt="Proyecto Vida Sana" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #eff6ff; color: #2563eb;">🩺</div>
-                        <span class="project-tag">SALUD Y ASISTENCIA</span>
-                        <h4 class="project-title">Proyecto Vida Sana</h4>
-                        <p class="project-desc">Realizando actividades para juntar fondos para un niño con cáncer, inspección médica por especialistas en instituciones previa a actividades físicas, servicio de peluquería y ayuda social en tratamientos.</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #84cc16, #65a30d);">
-                    <img src="../image/proyecto_equinoterapia.jpg" alt="Apoyo para la Rehabilitación: Equinoterapia" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #f7fee7; color: #65a30d;">🐴</div>
-                        <span class="project-tag">REHABILITACIÓN</span>
-                        <h4 class="project-title">Apoyo para la Rehabilitación: Equinoterapia</h4>
-                        <p class="project-desc">Apoyo continuo para la rehabilitación física, motriz y emocional a través de la terapia asistida con caballos (Equinoterapia).</p>
-                    </div>
-                </div>
-
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #f43f5e, #e11d48);">
-                    <img src="../image/proyecto_semana_nino.jpg" alt="Proyecto Semana del Niño" class="project-img">
-                    <div class="project-content">
-                        <div class="project-icon-box" style="--icon-bg: #fff1f2; color: #e11d48;">🎈</div>
-                        <span class="project-tag">FESTIVIDAD INFANTIL</span>
-                        <h4 class="project-title">Proyecto Semana del Niño - Días de Sonrisas</h4>
-                        <p class="project-desc">Jornadas festivas con apoyo de universidades, show del Tío José, Globo Loco, Municipalidad, Bomberos y muchísimos amigos.</p>
-                    </div>
-                </div>
-            </div>
+<!-- DONACIÓN -->
+<section class="section donation-section" id="donacion" aria-labelledby="donacion-title">
+  <div class="container">
+    <div class="donation-layout">
+      <div class="donation-intro reveal">
+        <span class="section-label">❤️ Donación con Propósito</span>
+        <h2 class="section-title" id="donacion-title">¿Qué logra tu aporte?</h2>
+        <p style="color:var(--text-m);margin-bottom:8px;">Tu donación llega directamente a quienes más la necesitan. Aquí te mostramos lo que cada monto hace posible:</p>
+        <div class="impact-matrix">
+          <div class="impact-row">
+            <span class="impact-amount">Gs. 50.000</span>
+            <span class="impact-separator">→</span>
+            <span class="impact-desc">🍎 Meriendas y materiales didácticos por 1 semana</span>
+          </div>
+          <div class="impact-row">
+            <span class="impact-amount">Gs. 120.000</span>
+            <span class="impact-separator">→</span>
+            <span class="impact-desc">🐴 1 sesión completa de equinoterapia asistida</span>
+          </div>
+          <div class="impact-row">
+            <span class="impact-amount">Gs. 250.000</span>
+            <span class="impact-separator">→</span>
+            <span class="impact-desc">🧩 Materiales terapéuticos para 1 mes</span>
+          </div>
+          <div class="impact-row">
+            <span class="impact-amount">Gs. 300.000</span>
+            <span class="impact-separator">→</span>
+            <span class="impact-desc">🏫 Beca mensual de acompañamiento escolar integral</span>
+          </div>
+          <div class="impact-row">
+            <span class="impact-amount">Gs. 500.000</span>
+            <span class="impact-separator">→</span>
+            <span class="impact-desc">👨‍👩‍👧 Acompañamiento mensual completo a 1 familia</span>
+          </div>
         </div>
-    </section>
+        <button class="btn btn-coral btn-lg" style="margin-top:28px;" onclick="openModal('modal-donacion')">
+          ❤️ Donar Ahora – Sin Fricción
+        </button>
+      </div>
 
-    <!-- Sección Galería de Imágenes Locales -->
-    <section id="galeria" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">REGISTRO FOTOGRÁFICO LOCAL</span>
-                <h2 class="section-title">Galería de Impacto Social</h2>
-                <p class="section-desc">Imágenes guardadas en la carpeta del proyecto (../image/) listas para ser reemplazadas progresivamente.</p>
+      <!-- SIPAP CARD INLINE -->
+      <div class="reveal reveal-delay-2">
+        <div class="sipap-card">
+          <div class="sipap-header">
+            <h3>📋 Transferencia Directa (SIPAP)</h3>
+            <p>Datos verificados. Copiá y transferí desde tu app bancaria.</p>
+          </div>
+          <div class="sipap-tabs">
+            <button class="sipap-tab active" onclick="switchTabInline('inline-personas')">👤 Personas</button>
+            <button class="sipap-tab" onclick="switchTabInline('inline-empresas')">🏢 Empresas</button>
+          </div>
+          <div class="sipap-body">
+            <div class="sipap-panel active" id="inline-personas">
+              <div class="sipap-field"><label>Titular</label><div class="sipap-value">Fundación Espacio de Vida</div></div>
+              <div class="sipap-field"><label>RUC</label><div class="sipap-value">80087692-0</div></div>
+              <div class="sipap-field"><label>Banco</label><div class="sipap-value">Visión Banco / Banco Continental</div></div>
+              <div class="sipap-field"><label>Sistema</label><div class="sipap-value">SIPAP – Transferencia Interbancaria</div></div>
+              <button class="copy-btn" onclick="copyData('Fundación Espacio de Vida | RUC: 80087692-0 | Visión Banco | SIPAP', 'Datos bancarios')">📋 Copiar Todos los Datos</button>
+              <button class="copy-btn" style="background:var(--blue-trust);margin-top:10px;" onclick="copyData('80087692-0', 'RUC')">🔢 Copiar Solo el RUC</button>
             </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../image/galeria_1.jpg" alt="Jornada Comunitaria">
-                    <div class="gallery-overlay">Jornadas de Integración Comunitaria</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../image/galeria_2.jpg" alt="Talleres Educativos">
-                    <div class="gallery-overlay">Talleres Formativos e Infantiles</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../image/galeria_3.jpg" alt="Acción Social">
-                    <div class="gallery-overlay">Proyectos de Inclusión Social</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../image/galeria_4.jpg" alt="Arte Urbano">
-                    <div class="gallery-overlay">Encuentros de Arte y Pintura</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../image/galeria_5.jpg" alt="Capacitación">
-                    <div class="gallery-overlay">Capacitación a Emprendedores</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../image/galeria_6.jpg" alt="Artesanía">
-                    <div class="gallery-overlay">Feria de Artesanías y Talentos</div>
-                </div>
+            <div class="sipap-panel" id="inline-empresas">
+              <div style="background:var(--gold-light);border-radius:var(--r-md);padding:16px;margin-bottom:18px;border:1px solid var(--gold);">
+                <strong style="color:var(--gold);font-size:.9rem;">💼 100% Deducible del IRE</strong>
+                <p style="font-size:.82rem;margin-top:4px;">Art. 15 num. 20 · Ley N° 6380/19</p>
+              </div>
+              <div class="sipap-field"><label>Personería Jurídica</label><div class="sipap-value">Nº 7531/2017</div></div>
+              <div class="sipap-field"><label>Decreto Presidencial</label><div class="sipap-value">N° 1913/2014</div></div>
+              <a href="https://wa.me/595961298912?text=Hola,%20somos%20una%20empresa%20y%20queremos%20coordinar%20una%20donaci%C3%B3n%20o%20alianza%20RSE%20con%20la%20Fundaci%C3%B3n%20Espacio%20de%20Vida." target="_blank" class="copy-btn" style="background:var(--green-hope);text-decoration:none;">💬 Contactar por WhatsApp</a>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección Transparencia & Credibilidad Institucional -->
-    <section id="transparencia">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">RESPALDO LEGAL Y FISCAL</span>
-                <h2 class="section-title">Transparencia Institucional</h2>
-                <p class="section-desc">Operamos bajo estricto cumplimiento normativo en Paraguay para garantizar máxima confianza a donantes y aliados.</p>
+<!-- RSE / EMPRESAS -->
+<section class="section rse-section" id="empresas" aria-labelledby="empresas-title">
+  <div class="container">
+    <div class="rse-layout">
+      <div class="rse-content reveal">
+        <span class="section-label">🏢 Responsabilidad Social Empresarial</span>
+        <h2 class="section-title" id="empresas-title">Sume su empresa a nuestra causa</h2>
+        <p style="color:rgba(255,255,255,.75);margin-bottom:8px;font-size:1.05rem;">Haga que su inversión social sea <strong style="color:#fff;">100% deducible del IRE</strong> bajo el Art. 15 num. 20 de la Ley N° 6380/19.</p>
+        <div class="rse-badges">
+          <div class="rse-badge">
+            <span class="rse-badge-icon">🛡️</span>
+            <div class="rse-badge-text">
+              <strong>RUC Activo y Verificado ante la DNIT</strong>
+              <span>80087692-0 – Fundación Espacio de Vida</span>
             </div>
-
-            <div class="transparency-box">
-                <div class="transparency-grid">
-                    <div class="transparency-item">
-                        <h5>RUC Oficial</h5>
-                        <p>80087692-0</p>
-                    </div>
-                    <div class="transparency-item">
-                        <h5>Decreto Presidencial</h5>
-                        <p>Decreto N° 1913/2014</p>
-                    </div>
-                    <div class="transparency-item">
-                        <h5>Exención IVA</h5>
-                        <p>Art. 104 y 111 Ley 1034/83</p>
-                    </div>
-                    <div class="transparency-item">
-                        <h5>Deducibilidad IRE</h5>
-                        <p>Art. 15 num. 20 Ley 6380/19</p>
-                    </div>
-                </div>
+          </div>
+          <div class="rse-badge">
+            <span class="rse-badge-icon">📜</span>
+            <div class="rse-badge-text">
+              <strong>Decreto Presidencial N° 1913/2014</strong>
+              <span>Reconocimiento oficial del Poder Ejecutivo del Paraguay</span>
             </div>
+          </div>
+          <div class="rse-badge">
+            <span class="rse-badge-icon">⚖️</span>
+            <div class="rse-badge-text">
+              <strong>Personería Jurídica N° 7531/2017</strong>
+              <span>Fundación legalmente registrada y vigente</span>
+            </div>
+          </div>
+          <div class="rse-badge">
+            <span class="rse-badge-icon">💰</span>
+            <div class="rse-badge-text">
+              <strong>Deducibilidad IRE – Art. 15 Ley 6380/19</strong>
+              <span>Sus aportes reducen la carga fiscal de su empresa</span>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Sección Alianzas y Comunidad -->
-    <section id="alianzas" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">ALIANZAS Y COMUNIDAD</span>
-                <h2 class="section-title">Vínculos Comunitarios</h2>
-                <p class="section-desc">Agradecemos profundamente el apoyo continuo de las instituciones públicas, medios de comunicación, escuelas y miembros de la comunidad que hacen posible nuestra misión.</p>
-                
-                <div class="alliance-badges">
-                    <span class="alliance-pill">Escuela ARASY</span>
-                    <span class="alliance-pill">Municipalidad de Lambaré</span>
-                    <span class="alliance-pill">Bomberos Voluntarios (5ta Cía.)</span>
-                    <span class="alliance-pill">Iglesia Virgen del Rosario</span>
-                    <span class="alliance-pill">Comunidad Barrio Kennedy</span>
-                    <span class="alliance-pill">Comunidad Barrio Cerro Corá</span>
-                    <span class="alliance-pill">Grupo 4x4</span>
-                </div>
-            </div>
+        <div class="rse-ctas">
+          <a href="https://wa.me/595961298912?text=Hola,%20represento%20a%20una%20empresa%20y%20quisiera%20coordinar%20una%20alianza%20de%20RSE%20y%20donaci%C3%B3n%20deducible%20con%20la%20Fundaci%C3%B3n%20Espacio%20de%20Vida." target="_blank" class="btn btn-coral btn-lg">
+            💬 Contactar para Alianza RSE (WhatsApp)
+          </a>
+          <button class="btn btn-ghost btn-lg" onclick="copyData('Fundación Espacio de Vida | RUC: 80087692-0 | Decreto N° 1913/2014 | Personería Jurídica N° 7531/2017 | IRE Deducible Art. 15 Ley 6380/19', 'Datos institucionales')">
+            📋 Copiar Datos Fiscales Institucionales
+          </button>
         </div>
-    </section>
-
-    <!-- Sección Contacto & Geolocalización -->
-    <section id="contacto">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">ENCUÉNTRANOS EN...</span>
-                <h2 class="section-title">Ubicación & Contacto Directo</h2>
-                <p class="section-desc">La Fundación ESPACIO DE VIDA se encuentra trabajando dentro de la ciudad de Lambaré gracias a los amigos y personas de buen corazón de forma incansable. Los logros que estamos obteniendo es a beneficio de las personas que han depositado su confianza en nosotros.</p>
-            </div>
-
-            <div class="contact-grid" style="margin-bottom: 30px;">
-                <div class="contact-info-box">
-                    <div>
-                        <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #ffffff;">Fundación Espacio de Vida</h3>
-                        
-                        <div class="contact-item">
-                            <span class="contact-item-icon">📍</span>
-                            <div>
-                                <h5>Dirección</h5>
-                                <p>Guaraníes 196 c/ Cacique Lambaré (Barrio Cerro Corá) / Capitán Figari c/ Piribebuy 643 (Barrio Kennedy)</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">📞</span>
-                            <div>
-                                <h5>Teléfono</h5>
-                                <p>021-902-544 / 0961298912 / 0991.978.413</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">✉️</span>
-                            <div>
-                                <h5>Correo Electrónico</h5>
-                                <p>Espaciodevidafundación@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">🌐</span>
-                            <div>
-                                <h5>Página Web</h5>
-                                <p><a href="http://www.espaciodevida.org" target="_blank" style="color: #fef08a; font-weight: 700;">www.espaciodevida.org ↗</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">📸</span>
-                            <div>
-                                <h5>Facebook</h5>
-                                <p>Fundación Espacio de Vida</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-item-icon">🏛️</span>
-                            <div>
-                                <h5>Distrito / Dpto.</h5>
-                                <p>Distrito Lambaré &bull; Dpto. Central &bull; Paraguay</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-box">
-                    <form onsubmit="event.preventDefault(); copyToClipboard('Mensaje Enviado', 'Mensaje'); alert('¡Gracias por contactar con la Fundación Espacio de Vida!');">
-                        <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px; color: var(--text-heading);">Enviar Mensaje o Propuesta</h4>
-                        <div class="form-group">
-                            <label>Nombre Completo / Institución:</label>
-                            <input type="text" class="form-control" required placeholder="Ej: Maria Gonzalez">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Correo Electrónico o Teléfono:</label>
-                            <input type="text" class="form-control" required placeholder="Ej: 0961 298 912">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Mensaje:</label>
-                            <textarea class="form-control" rows="4" required placeholder="Escriba su mensaje sobre voluntariado, alianzas o apoyos..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-hero-primary" style="width: 100%; text-align: center; justify-content: center;">Enviar Mensaje Directo 🚀</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- MAPA GPS INTEGRADO -->
-            <div id="mapa" class="map-section-direct">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-                    <div><span style="font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase;">GEOLOCALIZACIÓN</span><h4 style="font-size: 18px; font-weight: 800; color: var(--text-heading); margin: 2px 0 0 0;">Lambaré, Departamento Central, Paraguay</h4></div>
-                    <div><a href="https://www.google.com/maps?q=-25.347093450033267,-57.63581040164236" target="_blank" class="btn-hero-primary" style="font-size: 13px; padding: 10px 18px;">Abrir GPS en Google Maps 📍 ↗</a></div>
-                </div>
-                <div class="map-iframe-box" style="height: 350px;">
-                    <iframe src="https://maps.google.com/maps?q=-25.347093450033267,-57.63581040164236&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
+      </div>
+      <div class="rse-visual reveal reveal-delay-2">
+        <h3>Beneficio Fiscal para su Empresa</h3>
+        <div class="deduct-highlight">
+          <div class="pct">100%</div>
+          <div class="pct-label">Deducible del Impuesto a la Renta Empresarial</div>
         </div>
-    </section>
-
-    <!-- Footer Web con Sello Institucional y Firma Digital por Emil Kowalski -->
-    <footer>
-        <div class="footer-container">
-            <div>
-                <strong style="color: #ffffff; font-size: 17px; display: block; margin-bottom: 4px;">Fundación Espacio de Vida</strong>
-                <span>Organización Sin Fines de Lucro &bull; Creada en 2013 &bull; Lambaré, Depto. Central &bull; Tel: 021-902-544 / 0961.298.912 &bull; www.espaciodevida.org</span>
-            </div>
-
-            <div class="tricolor-stripe-web"></div>
-
-            <div>
-                <span style="font-size: 14px; font-weight: 800; color: #ffffff;">SI QUIERES APOYAR ESTA GRAN OBRA... TE NECESITAMOS. ¡GRACIAS POR SU ATENCIÓN!</span>
-            </div>
-
-            <div class="footer-credit" style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; width: 100%;">
-                Diseño por Emil Kowalski &bull; Portal Oficial Fundación Espacio de Vida
-            </div>
+        <div class="ley-badge">
+          📘 <strong>Ley N° 6380/19</strong> – Modernización y Simplificación del Sistema Tributario Nacional de la República del Paraguay.<br>
+          <em>Artículo 15, Numeral 20: Donaciones a entidades sin fines de lucro reconocidas.</em>
         </div>
-    </footer>
+        <div style="margin-top:20px;padding:18px;background:rgba(255,255,255,.07);border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.12);">
+          <p style="font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.7;">Las empresas que realizan donaciones documentadas a la Fundación Espacio de Vida pueden deducir el monto del <strong style="color:#fff;">Impuesto a la Renta Empresarial (IRE)</strong>, cumpliendo además con sus metas de Responsabilidad Social Empresarial (RSE) y generando impacto social medible en la comunidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <a href="https://wa.me/595961298912?text=Hola,%20deseo%20obtener%20información%20de%20la%20Fundación%20Espacio%20de%20Vida" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">💬</a>
+<!-- TRANSPARENCIA -->
+<section class="section" id="transparencia" aria-labelledby="transparencia-title">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <span class="section-label" style="background:var(--gold-light);color:var(--gold);">🛡️ Transparencia Institucional</span>
+      <h2 class="section-title" id="transparencia-title">Respaldo legal y fiscal verificable</h2>
+      <p class="section-sub" style="margin:0 auto;">Toda nuestra documentación es pública, verificable ante la DNIT y el Ministerio de Justicia de Paraguay.</p>
+    </div>
+    <div class="transparency-grid">
+      <div class="transp-card reveal reveal-delay-1">
+        <div class="transp-icon">🏛️</div>
+        <h3>Personería Jurídica</h3>
+        <p>Fundación legalmente constituida y reconocida por el Estado Paraguayo desde 2017.</p>
+        <span class="transp-value">Nº 7531/2017</span>
+      </div>
+      <div class="transp-card reveal reveal-delay-2">
+        <div class="transp-icon">📜</div>
+        <h3>Decreto Presidencial</h3>
+        <p>Reconocimiento oficial del Poder Ejecutivo de la República del Paraguay.</p>
+        <span class="transp-value">N° 1913/2014</span>
+      </div>
+      <div class="transp-card reveal reveal-delay-3">
+        <div class="transp-icon">🔢</div>
+        <h3>RUC Verificado</h3>
+        <p>Número de Registro Único de Contribuyentes activo y al día ante la DNIT (SET).</p>
+        <span class="transp-value">80087692-0</span>
+      </div>
+      <div class="transp-card reveal reveal-delay-1">
+        <div class="transp-icon">⚖️</div>
+        <h3>Deducibilidad Fiscal</h3>
+        <p>Donaciones deducibles del Impuesto a la Renta Empresarial bajo normativa vigente.</p>
+        <span class="transp-value">Art. 15 · Ley 6380/19</span>
+      </div>
+      <div class="transp-card reveal reveal-delay-2">
+        <div class="transp-icon">📅</div>
+        <h3>Trayectoria</h3>
+        <p>Operando ininterrumpidamente desde 2013. Más de 12 años de gestión transparente.</p>
+        <span class="transp-value">Desde 2013</span>
+      </div>
+      <div class="transp-card reveal reveal-delay-3">
+        <div class="transp-icon">📍</div>
+        <h3>Sede Institucional</h3>
+        <p>Con presencia territorial activa en Lambaré, Departamento Central, Paraguay.</p>
+        <span class="transp-value">Lambaré, PY</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <button class="btn btn-green btn-lg" onclick="copyData('Fundación Espacio de Vida | RUC: 80087692-0 | Decreto N° 1913/2014 | Personería Jurídica N° 7531/2017 | Ley 6380/19 Art. 15', 'Datos de transparencia')">
+        📋 Copiar Datos Institucionales Completos
+      </button>
+      <p style="margin-top:16px;font-size:.88rem;color:var(--text-m);">Verificable en la DNIT (SET): dnit.gov.py | Ministerio de Justicia: mjusticia.gov.py</p>
+    </div>
+  </div>
+</section>
 
-    <!-- SCRIPTS DE INTERACCIÓN Y SCROLL REVEAL -->
-    <script>
-        window.addEventListener("scroll", () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("scroll-progress").style.width = scrolled + "%";
+<!-- GALERIA -->
+<section class="section section-alt" id="galeria" aria-labelledby="galeria-title">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 48px;">
+      <span class="section-label" style="background:var(--blue-light);color:var(--blue-dark);">📸 Galería de Impacto</span>
+      <h2 class="section-title" id="galeria-title">Momentos reales. Impacto real.</h2>
+      <p class="section-sub" style="margin:0 auto;">Fotografías de nuestras actividades y programas en Lambaré, Paraguay.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;box-shadow:var(--sh-sm);" class="reveal reveal-delay-1"><img src="../image/galeria_1.jpg" alt="Actividad comunitaria Fundación Espacio de Vida" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;box-shadow:var(--sh-sm);" class="reveal reveal-delay-2"><img src="../image/galeria_2.jpg" alt="Sesión terapéutica en Espacio de Vida" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;box-shadow:var(--sh-sm);" class="reveal reveal-delay-3"><img src="../image/galeria_3.jpg" alt="Niños en actividades inclusivas" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;box-shadow:var(--sh-sm);" class="reveal reveal-delay-1"><img src="../image/galeria_4.jpg" alt="Voluntarios de Fundación Espacio de Vida" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;box-shadow:var(--sh-sm);" class="reveal reveal-delay-2"><img src="../image/galeria_5.jpg" alt="Evento comunitario en Lambaré" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1;box-shadow:var(--sh-sm);" class="reveal reveal-delay-3"><img src="../image/galeria_6.jpg" alt="Trayectoria y logros de Espacio de Vida" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section" id="contacto" aria-labelledby="contacto-title">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <span class="section-label">📞 Contacto</span>
+      <h2 class="section-title" id="contacto-title">Estamos para escucharte</h2>
+      <p class="section-sub" style="margin:0 auto;">Escribinos, llamanos o visitanos. Siempre hay alguien dispuesto a orientarte.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="contact-item reveal reveal-delay-1">
+          <span class="contact-item-icon">📍</span>
+          <div>
+            <h4>Dirección</h4>
+            <p>Lambaré, Departamento Central, Paraguay<br>Barrio Cerro Corá / Barrio Kennedy</p>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-2">
+          <span class="contact-item-icon">📞</span>
+          <div>
+            <h4>Teléfonos</h4>
+            <p>021-902-544 · 0961.298.912</p>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-3">
+          <span class="contact-item-icon">💬</span>
+          <div>
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/595961298912" target="_blank" style="color:var(--green-hope);font-weight:700;">+595 961.298.912</a></p>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-4">
+          <span class="contact-item-icon">🌐</span>
+          <div>
+            <h4>Sitio Web Oficial</h4>
+            <p><a href="https://wmlumen.github.io/Fundacion-Espacio-de-Vida/" style="color:var(--blue-trust);font-weight:700;">wmlumen.github.io/Fundacion-Espacio-de-Vida</a></p>
+          </div>
+        </div>
+        <a href="https://wa.me/595961298912?text=Hola,%20deseo%20información%20sobre%20la%20Fundación%20Espacio%20de%20Vida." target="_blank" class="btn btn-green btn-lg reveal" style="text-align:center;justify-content:center;">
+          💬 Escribir por WhatsApp
+        </a>
+      </div>
+      <div class="contact-form reveal reveal-delay-2">
+        <h3>📩 Envianos un mensaje</h3>
+        <form onsubmit="handleContactForm(event)" novalidate>
+          <div class="form-group">
+            <label for="cf-nombre">Nombre Completo</label>
+            <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre y apellido" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Correo Electrónico</label>
+            <input type="email" id="cf-email" name="email" placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="cf-tipo">Tipo de Consulta</label>
+            <select id="cf-tipo" name="tipo">
+              <option value="">Seleccioná el motivo…</option>
+              <option value="donacion">Quiero hacer una donación</option>
+              <option value="voluntariado">Quiero ser voluntario/a</option>
+              <option value="rse">Alianza Corporativa / RSE</option>
+              <option value="equinoterapia">Información sobre Equinoterapia</option>
+              <option value="autismo">Atención al Espectro Autista</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-mensaje">Mensaje</label>
+            <textarea id="cf-mensaje" name="mensaje" placeholder="Contanos cómo podemos ayudarte…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-coral" style="width:100%;justify-content:center;padding:15px;">
+            📨 Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="tricolor"></div>
+<footer aria-label="Pie de página">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../image/logo_espacio_de_vida.png" alt="Logo Fundación Espacio de Vida" loading="lazy">
+      <p>Organización Sin Fines de Lucro fundada en 2013 en Lambaré, Departamento Central, Paraguay. Comprometidos con la vida, el hogar y el desarrollo sostenible de las comunidades más vulnerables.</p>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://wa.me/595961298912" target="_blank" class="btn btn-green btn-sm">💬 WhatsApp</a>
+        <button class="btn btn-coral btn-sm" onclick="openModal('modal-donacion')">❤️ Donar</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Programas</h4>
+      <a href="#programas">Equinoterapia</a>
+      <a href="#programas">Espectro Autista</a>
+      <a href="#programas">Estimulación Temprana</a>
+      <a href="#programas">Vida Sana</a>
+      <a href="#programas">Manos Solidarias</a>
+    </div>
+    <div class="footer-col">
+      <h4>Institución</h4>
+      <a href="#impacto">Nuestro Impacto</a>
+      <a href="#transparencia">Transparencia</a>
+      <a href="#empresas">RSE / Empresas</a>
+      <a href="#donacion">Donar / Apadrinar</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#transparencia">RUC: 80087692-0</a>
+      <a href="#transparencia">Decreto N° 1913/2014</a>
+      <a href="#transparencia">Personería N° 7531/2017</a>
+      <a href="#empresas">Art. 15 Ley 6380/19</a>
+      <a href="#contacto">021-902-544</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Fundación Espacio de Vida. Todos los derechos reservados. Lambaré, Paraguay.</p>
+    <span class="footer-ruc">RUC: 80087692-0 · Verificado DNIT</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/595961298912?text=Hola,%20deseo%20información%20sobre%20la%20Fundación%20Espacio%20de%20Vida." class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">💬</a>
+
+<script>
+// ── SCROLL PROGRESS ──
+window.addEventListener('scroll', () => {
+    const scrolled = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+    document.getElementById('scroll-progress').style.width = scrolled + '%';
+    const header = document.getElementById('main-header');
+    if (document.documentElement.scrollTop > 60) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// ── SCROLL REVEAL ──
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Animate counters
+    const counters = document.querySelectorAll('.metric-num');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const el = e.target;
+                const raw = el.textContent.replace(/[^0-9]/g, '');
+                if (!raw) return;
+                const target = parseInt(raw);
+                const prefix = el.textContent.includes('+') ? '+' : '';
+                const suffix = el.textContent.includes('.') ? el.textContent.replace(/[0-9+]/g, '').replace(/[^.,]/g,'') : '';
+                let start = 0;
+                const duration = 1800;
+                const step = (timestamp) => {
+                    if (!start) start = timestamp;
+                    const progress = Math.min((timestamp - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(eased * target);
+                    el.textContent = prefix + current.toLocaleString('es-PY');
+                    if (progress < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+                counterObserver.unobserve(el);
+            }
         });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObserver.observe(el));
+});
 
-        function copyToClipboard(text, label) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById("toast");
-                document.getElementById("toast-text").innerText = `¡${label} copiado al portapapeles!`;
-                toast.classList.add("show");
-                setTimeout(() => { toast.classList.remove("show"); }, 2800);
-            });
-        }
+// ── THEME ──
+function toggleTheme() {
+    const html = document.documentElement;
+    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    document.querySelector('.theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+}
 
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute("data-theme");
-            const newTheme = currentTheme === "dark" ? "light" : "dark";
-            html.setAttribute("data-theme", newTheme);
-        }
+// ── MODALS ──
+function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-backdrop').forEach(el => {
+    el.addEventListener('click', e => { if (e.target === el) { closeModal(el.id); } });
+});
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { document.querySelectorAll('.modal-backdrop.open').forEach(el => closeModal(el.id)); }
+});
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const targets = document.querySelectorAll("section, .info-card, .project-card, .contact-info-box, .contact-form-box");
-            targets.forEach(el => {
-                if (!el.classList.contains("reveal")) {
-                    el.classList.add("reveal");
-                }
-            });
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-            document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-        });
-    </script>
+// ── TABS ──
+function switchTab(panel) {
+    document.querySelectorAll('#modal-donacion .sipap-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('#modal-donacion .sipap-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('panel-' + panel).classList.add('active');
+}
+function switchTabInline(panelId) {
+    const parent = event.target.closest('.sipap-card');
+    parent.querySelectorAll('.sipap-tab').forEach(t => t.classList.remove('active'));
+    parent.querySelectorAll('.sipap-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+}
+
+// ── COPY ──
+function copyData(text, label) {
+    navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        document.getElementById('toast-text').textContent = '¡' + label + ' copiado al portapapeles!';
+        document.getElementById('toast-icon').textContent = '✅';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+    }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+        const toast = document.getElementById('toast');
+        document.getElementById('toast-text').textContent = '¡' + label + ' copiado!';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+    });
+}
+
+// ── MOBILE NAV ──
+function openMobileNav() {
+    document.getElementById('mobile-nav').classList.add('open');
+    document.getElementById('mobile-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.getElementById('mobile-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// ── FORM ──
+function handleContactForm(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('cf-nombre').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const mensaje = document.getElementById('cf-mensaje').value.trim();
+    if (!nombre || !email || !mensaje) {
+        const toast = document.getElementById('toast');
+        document.getElementById('toast-icon').textContent = '⚠️';
+        document.getElementById('toast-text').textContent = 'Por favor, completá todos los campos obligatorios.';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+        return;
+    }
+    const waMsg = encodeURIComponent('Hola, soy ' + nombre + ' (' + email + ') y quiero comunicarme: ' + mensaje);
+    window.open('https://wa.me/595961298912?text=' + waMsg, '_blank');
+    e.target.reset();
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-icon').textContent = '✅';
+    document.getElementById('toast-text').textContent = '¡Mensaje enviado! Te redirigimos a WhatsApp.';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+}
+</script>
 </body>
 </html>
