@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wmlumen.github.io/Fundacion-Espacio-de-Vida/sitemap.xml
