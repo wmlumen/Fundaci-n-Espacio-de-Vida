@@ -8,7 +8,7 @@
     <meta name="keywords" content="donaciones, sostenibilidad, voluntariado, educación ambiental, inclusión, Lambaré, Paraguay, Fundación Espacio de Vida">
     <meta name="author" content="Fundación Espacio de Vida - Diseño por Emil Kowalski">
     
-    <!-- Tipografía Profesional: Merriweather (Serif para Títulos) & Open Sans (Sans-Serif para Texto) -->
+    <!-- Tipografía Profesional: Merriweather & Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -88,7 +88,6 @@
             transition: var(--transition-smooth);
         }
 
-        /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -139,7 +138,6 @@
             opacity: 1;
         }
 
-        /* Header Navbar */
         header {
             position: fixed;
             top: 0;
@@ -250,7 +248,6 @@
             box-shadow: 0 8px 25px rgba(197, 155, 39, 0.5);
         }
 
-        /* Hero */
         .hero {
             padding: 150px 24px 80px 24px;
             background: radial-gradient(circle at 90% 10%, rgba(45, 106, 79, 0.08) 0%, transparent 50%),
@@ -339,62 +336,71 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 32px;
+            overflow: hidden;
             box-shadow: var(--shadow-lg);
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .hero-card-body {
+            padding: 24px;
         }
 
         .hero-card-header {
             display: flex;
             align-items: center;
             gap: 16px;
-            padding-bottom: 20px;
+            padding-bottom: 16px;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero-card-header img {
-            height: 64px;
+            height: 54px;
             width: auto;
         }
 
         .hero-card-info h3 {
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--text-heading);
         }
 
         .hero-card-info p {
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-muted);
         }
 
         .hero-stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
+            gap: 12px;
         }
 
         .hero-stat-box {
             background: var(--bg-section-alt);
-            padding: 16px;
+            padding: 14px;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
         }
 
         .hero-stat-box strong {
             display: block;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             color: var(--primary-green);
         }
 
         .hero-stat-box span {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-muted);
             font-weight: 600;
         }
 
-        /* Sections General */
         section {
             padding: 90px 24px;
         }
@@ -448,9 +454,19 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 32px;
+            overflow: hidden;
             box-shadow: var(--shadow-sm);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .info-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .info-card-content {
+            padding: 28px;
         }
 
         .info-card:hover {
@@ -494,7 +510,7 @@
             font-weight: 900;
         }
 
-        /* Modern Projects Grid & Attractive Card Styling */
+        /* Modern Projects Grid & Local Image Styling */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -513,6 +529,17 @@
             flex-direction: column;
         }
 
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
         .project-card::before {
             content: "";
             position: absolute;
@@ -521,6 +548,7 @@
             right: 0;
             height: 5px;
             background: var(--card-accent, linear-gradient(90deg, var(--primary-green), var(--gold)));
+            z-index: 2;
         }
 
         .project-card:hover {
@@ -530,24 +558,24 @@
         }
 
         .project-content {
-            padding: 30px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
 
         .project-icon-box {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 16px;
             background: var(--icon-bg, #f1f5f9);
             border: 1px solid var(--border-color);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
 
@@ -566,21 +594,60 @@
         }
 
         .project-title {
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--text-heading);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1.35;
         }
 
         .project-desc {
-            font-size: 14px;
+            font-size: 13.8px;
             color: var(--text-body);
             line-height: 1.65;
             flex-grow: 1;
         }
 
-        /* Transparency Box */
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            height: 220px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 43, 70, 0.85) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
         .transparency-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -616,7 +683,6 @@
             color: var(--text-muted);
         }
 
-        /* Testimonial & Alliance Grid */
         .alliance-badges {
             display: flex;
             flex-wrap: wrap;
@@ -636,7 +702,6 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* Contact & Map */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -786,12 +851,12 @@
 
         @media (max-width: 1024px) {
             .hero-container, .contact-grid { grid-template-columns: 1fr; }
-            .grid-3col, .projects-grid, .transparency-grid { grid-template-columns: repeat(2, 1fr); }
+            .grid-3col, .projects-grid, .gallery-grid, .transparency-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .grid-3col, .projects-grid, .transparency-grid { grid-template-columns: 1fr; }
+            .grid-3col, .projects-grid, .gallery-grid, .transparency-grid { grid-template-columns: 1fr; }
             .hero-title { font-size: 34px; }
         }
     </style>
@@ -809,7 +874,7 @@
     <header>
         <div class="nav-container">
             <a href="#inicio" class="brand-logo">
-                <img src="FORMULARIOS/logo_espacio_de_vida.png" alt="Fundación Espacio de Vida Logo">
+                <img src="image/logo_espacio_de_vida.png" alt="Fundación Espacio de Vida Logo">
                 <div class="brand-text">
                     <h1>Espacio de Vida</h1>
                     <span>Desarrollo Sostenible &bull; 2013</span>
@@ -822,6 +887,7 @@
                 <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
                 <li><a href="#como-ayudamos" class="nav-link">¿Cómo Ayudamos?</a></li>
                 <li><a href="#proyectos" class="nav-link">Programas</a></li>
+                <li><a href="#galeria" class="nav-link">Galería</a></li>
                 <li><a href="#transparencia" class="nav-link">Transparencia</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
@@ -835,7 +901,7 @@
         </div>
     </header>
 
-    <!-- Hero Section con Lema Institucional -->
+    <!-- Hero Section con Lema Institucional e Imagen Local -->
     <section id="inicio" class="hero">
         <div class="hero-container">
             <div>
@@ -850,30 +916,51 @@
             </div>
 
             <div class="hero-card-widget">
-                <div class="hero-card-header">
-                    <img src="FORMULARIOS/logo_espacio_de_vida.png" alt="Logo Oficial Fundación Espacio de Vida">
-                    <div class="hero-card-info">
-                        <h3>Fundación Espacio de Vida</h3>
-                        <p>Fundada en 2013 &bull; Lambaré, Paraguay</p>
+                <img src="image/hero_banner.jpg" alt="Hero Banner Fundación Espacio de Vida" class="hero-banner-img">
+                <div class="hero-card-body">
+                    <div class="hero-card-header">
+                        <img src="image/logo_espacio_de_vida.png" alt="Logo Oficial Fundación Espacio de Vida">
+                        <div class="hero-card-info">
+                            <h3>Fundación Espacio de Vida</h3>
+                            <p>Fundada en 2013 &bull; Lambaré, Paraguay</p>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-stats-grid">
-                    <div class="hero-stat-box"><strong>2013</strong><span>Año de Creación</span></div>
-                    <div class="hero-stat-box"><strong>100%</strong><span>Enfoque en Capacidades</span></div>
-                    <div class="hero-stat-box"><strong>Infanto</strong><span>Juvenil e Inclusión</span></div>
-                    <div class="hero-stat-box"><strong>Lambaré</strong><span>Departamento Central</span></div>
+                    <div class="hero-stats-grid">
+                        <div class="hero-stat-box"><strong>2013</strong><span>Año de Creación</span></div>
+                        <div class="hero-stat-box"><strong>100%</strong><span>Enfoque en Capacidades</span></div>
+                        <div class="hero-stat-box"><strong>Infanto</strong><span>Juvenil e Inclusión</span></div>
+                        <div class="hero-stat-box"><strong>Lambaré</strong><span>Departamento Central</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección 1: Quiénes Somos -->
+    <!-- Sección 1: Quiénes Somos con Imagen Local -->
     <section id="somos">
         <div class="section-container">
             <div class="section-header-center">
                 <span class="section-tag">NUESTRA HISTORIA</span>
                 <h2 class="section-title">Quiénes Somos</h2>
                 <p class="section-desc">La Fundación Espacio de Vida fue creada en 2013 como una organización sin fines de lucro. Trabaja para desarrollar y apoyar a entidades y personas con necesidades para que tengan acceso y oportunidades para participar completamente en la vida, social y cultural, no solamente concentrados en sus necesidades, sino principalmente enfocados en sus capacidades.</p>
+            </div>
+
+            <div class="grid-3col" style="grid-template-columns: 1fr 1fr; max-width: 960px; margin: 0 auto;">
+                <div class="info-card">
+                    <img src="image/quienes_somos.jpg" alt="Quiénes Somos Fundación Espacio de Vida" class="info-card-img">
+                    <div class="info-card-content">
+                        <h3>Organización Sin Fines de Lucro</h3>
+                        <p>Trabajando incansablemente desde 2013 en la ciudad de Lambaré por el bienestar material, espiritual y cultural de niños, jóvenes y familias.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <img src="image/mision_vision.jpg" alt="Enfoque en Capacidades" class="info-card-img">
+                    <div class="info-card-content">
+                        <h3>Enfoque en Capacidades Humanas</h3>
+                        <p>Fomentamos el desarrollo personal y la inclusión social centrándonos en el potencial único de cada persona.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -888,15 +975,19 @@
 
             <div class="grid-3col" style="grid-template-columns: 1fr 1fr;">
                 <div class="info-card">
-                    <span class="section-tag">NUESTRA MISIÓN</span>
-                    <h3>Misión</h3>
-                    <p>La Fundación Espacio de Vida tiene como misión la provisión de espacios y recursos que compensen las dificultades de las personas con capacidades diferentes que le favorezcan un adecuado desarrollo personal y social, pueda llegar a su plenitud e integrarse a su entorno, haciéndose partícipe de los compromisos de su comunidad. Teniendo así, una vida digna y útil dentro de la sociedad a pesar de sus diferencias individuales siendo cada una, única e irrepetible.</p>
+                    <div class="info-card-content">
+                        <span class="section-tag">NUESTRA MISIÓN</span>
+                        <h3>Misión</h3>
+                        <p>La Fundación Espacio de Vida tiene como misión la provisión de espacios y recursos que compensen las dificultades de las personas con capacidades diferentes que le favorezcan un adecuado desarrollo personal y social, pueda llegar a su plenitud e integrarse a su entorno, haciéndose partícipe de los compromisos de su comunidad. Teniendo así, una vida digna y útil dentro de la sociedad a pesar de sus diferencias individuales siendo cada una, única e irrepetible.</p>
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <span class="section-tag">NUESTRA VISIÓN</span>
-                    <h3>Visión</h3>
-                    <p>Crear un Espacio INFANTO-JUVENIL, tendiente a la Estimulación de Potencialidades y al desarrollo de la Creatividad, el Aprendizaje y el Deporte sin perder de vista la Inclusión del niño y joven a la sociedad.</p>
+                    <div class="info-card-content">
+                        <span class="section-tag">NUESTRA VISIÓN</span>
+                        <h3>Visión</h3>
+                        <p>Crear un Espacio INFANTO-JUVENIL, tendiente a la Estimulación de Potencialidades y al desarrollo de la Creatividad, el Aprendizaje y el Deporte sin perder de vista la Inclusión del niño y joven a la sociedad.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -910,7 +1001,7 @@
                 <h2 class="section-title">Objetivos y Estrategia Institucional</h2>
             </div>
 
-            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+            <div class="info-card" style="max-width: 900px; margin: 0 auto; padding: 36px;">
                 <ul class="feature-list">
                     <li><strong>Asistencia Social:</strong> Asistir a personas de escasos recursos económicos y financieros que tengan por finalidad la rehabilitación de las personas con capacidades diferentes y su integración al medio social, en forma digna y útil.</li>
                     <li><strong>Defensa de Derechos:</strong> Velar y defender sus derechos.</li>
@@ -931,38 +1022,44 @@
 
             <div class="grid-3col">
                 <div class="info-card">
-                    <h3>Espacios & Inclusión</h3>
-                    <ul class="feature-list">
-                        <li>Brinda espacios para el apoyo en las necesidades de las personas y favorezcan un adecuado desarrollo personal y social.</li>
-                        <li>Promover, apoyar o realizar actividades que tengan por finalidad la inclusión de las personas.</li>
-                        <li>Ayudar a crear accesos a actividades culturales, demostrando sus habilidades al máximo en forma independiente.</li>
-                    </ul>
+                    <div class="info-card-content">
+                        <h3>Espacios & Inclusión</h3>
+                        <ul class="feature-list">
+                            <li>Brinda espacios para el apoyo en las necesidades de las personas y favorezcan un adecuado desarrollo personal y social.</li>
+                            <li>Promover, apoyar o realizar actividades que tengan por finalidad la inclusión de las personas.</li>
+                            <li>Ayudar a crear accesos a actividades culturales, demostrando sus habilidades al máximo en forma independiente.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>Formación & Autonomía</h3>
-                    <ul class="feature-list">
-                        <li>La preparación de profesionales que apoyen y ayuden a la formación de las familias de los niños y jóvenes y lograr mayor autonomía e independencia.</li>
-                        <li>Acompañar la preparación para la transición a la vida activa y a la inclusión en la comunidad que le permita desempeñar un rol activo y productivo y satisfacer sus necesidades económicas y personales.</li>
-                    </ul>
+                    <div class="info-card-content">
+                        <h3>Formación & Autonomía</h3>
+                        <ul class="feature-list">
+                            <li>La preparación de profesionales que apoyen y ayuden a la formación de las familias de los niños y jóvenes y lograr mayor autonomía e independencia.</li>
+                            <li>Acompañar la preparación para la transición a la vida activa y a la inclusión en la comunidad que le permita desempeñar un rol activo y productivo y satisfacer sus necesidades económicas y personales.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>Desarrollo & Convenios</h3>
-                    <ul class="feature-list">
-                        <li>Formación y desarrollo organizacional con enfoque inclusivo.</li>
-                        <li>Talleres de capacitación y sensibilización.</li>
-                        <li>Formación de profesionales.</li>
-                        <li>Articulación y generación de acciones comunitarias en favor de la inclusión.</li>
-                        <li>Apoya a una escuela con el almuerzo y con especialistas para los alumnos.</li>
-                        <li>Convenios con Instituciones para la Inclusión.</li>
-                    </ul>
+                    <div class="info-card-content">
+                        <h3>Desarrollo & Convenios</h3>
+                        <ul class="feature-list">
+                            <li>Formación y desarrollo organizacional con enfoque inclusivo.</li>
+                            <li>Talleres de capacitación y sensibilización.</li>
+                            <li>Formación de profesionales.</li>
+                            <li>Articulación y generación de acciones comunitarias en favor de la inclusión.</li>
+                            <li>Apoya a una escuela con el almuerzo y con especialistas para los alumnos.</li>
+                            <li>Convenios con Instituciones para la Inclusión.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección 5: Galería de Proyectos & Impacto Social (Iconos Minimalistas + CSS Atractivo) -->
+    <!-- Sección 5: Galería de Proyectos & Impacto Social (Imágenes Locales de la carpeta image/) -->
     <section id="proyectos">
         <div class="section-container">
             <div class="section-header-center">
@@ -972,20 +1069,129 @@
             </div>
 
             <div class="projects-grid">
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #f59e0b, #d97706);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #fffbeb; color: #d97706;">🎨</div><span class="project-tag">CULTURA Y COMUNIDAD</span><h4 class="project-title">Proyecto Festival por un Espacio de Vida</h4><p class="project-desc">Festival por un espacio de vida a beneficio de la escuela ARASY con más de 15 artistas reconocidos y el apoyo de la municipalidad de Lambaré como Actividad de carácter cultural.</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #06b6d4, #0891b2);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #ecfeff; color: #0891b2;">🧩</div><span class="project-tag">AUTISMO E INCLUSIÓN</span><h4 class="project-title">Proyecto Pintando una Sonrisa</h4><p class="project-desc">Pintata por el día del Autismo con escuelas de Lambaré con el apoyo de figuras públicas de la TV, bomberos voluntarios, Municipalidad de Lambaré y la Iglesia Virgen del Rosario.</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #10b981, #059669);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #ecfdf5; color: #059669;">🤝</div><span class="project-tag">SOLIDARIDAD EN INUNDACIÓN</span><h4 class="project-title">Proyecto Manos Solidarias</h4><p class="project-desc">Colecta de víveres y ropas para las familias de Yukuty con apoyo de escuela Arasy, el grupo 4x4 y toda la comunidad de Barrio Kennedy en período de inundación.</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #8b5cf6, #6d28d9);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #f5f3ff; color: #6d28d9;">👑</div><span class="project-tag">INTEGRACIÓN SOCIAL</span><h4 class="project-title">Proyecto Cumpliendo el Sueño</h4><p class="project-desc">Festejo de 15 años a 5 jovencitas con el apoyo de artistas nacionales del momento (Que Loco, Contramano, DJ-Rata, Las Culisueltas y Monchi Papa).</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #ef4444, #dc2626);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #fef2f2; color: #dc2626;">👨‍🚒</div><span class="project-tag">APOYO PEDAGÓGICO</span><h4 class="project-title">Proyecto Bomberos por un Día</h4><p class="project-desc">Apoyando el área pedagógica de la escuela y llevando a los Bomberos a Instituciones educativas.</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #3b82f6, #2563eb);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #eff6ff; color: #2563eb;">🩺</div><span class="project-tag">SALUD Y ASISTENCIA</span><h4 class="project-title">Proyecto Vida Sana</h4><p class="project-desc">Realizando actividades para juntar fondos para un niño con cáncer, inspección médica por especialistas en instituciones previa a actividades físicas, servicio de peluquería y ayuda social en tratamientos.</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #84cc16, #65a30d);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #f7fee7; color: #65a30d;">🐴</div><span class="project-tag">REHABILITACIÓN</span><h4 class="project-title">Apoyo para la Rehabilitación: Equinoterapia</h4><p class="project-desc">Apoyo continuo para la rehabilitación física, motriz y emocional a través de la terapia asistida con caballos (Equinoterapia).</p></div></div>
-                <div class="project-card" style="--card-accent: linear-gradient(90deg, #f43f5e, #e11d48);"><div class="project-content"><div class="project-icon-box" style="--icon-bg: #fff1f2; color: #e11d48;">🎈</div><span class="project-tag">FESTIVIDAD INFANTIL</span><h4 class="project-title">Proyecto Semana del Niño - Días de Sonrisas</h4><p class="project-desc">Jornadas festivas con apoyo de universidades, show del Tío José, Globo Loco, Municipalidad, Bomberos y muchísimos amigos.</p></div></div>
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #f59e0b, #d97706);">
+                    <img src="image/proyecto_festival.jpg" alt="Proyecto Festival por un Espacio de Vida" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #fffbeb; color: #d97706;">🎨</div>
+                        <span class="project-tag">CULTURA Y COMUNIDAD</span>
+                        <h4 class="project-title">Proyecto Festival por un Espacio de Vida</h4>
+                        <p class="project-desc">Festival por un espacio de vida a beneficio de la escuela ARASY con más de 15 artistas reconocidos y el apoyo de la municipalidad de Lambaré como Actividad de carácter cultural.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #06b6d4, #0891b2);">
+                    <img src="image/proyecto_autismo.jpg" alt="Proyecto Pintando una Sonrisa" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #ecfeff; color: #0891b2;">🧩</div>
+                        <span class="project-tag">AUTISMO E INCLUSIÓN</span>
+                        <h4 class="project-title">Proyecto Pintando una Sonrisa</h4>
+                        <p class="project-desc">Pintata por el día del Autismo con escuelas de Lambaré con el apoyo de figuras públicas de la TV, bomberos voluntarios, Municipalidad de Lambaré y la Iglesia Virgen del Rosario.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #10b981, #059669);">
+                    <img src="image/proyecto_manos_solidarias.jpg" alt="Proyecto Manos Solidarias" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #ecfdf5; color: #059669;">🤝</div>
+                        <span class="project-tag">SOLIDARIDAD EN INUNDACIÓN</span>
+                        <h4 class="project-title">Proyecto Manos Solidarias</h4>
+                        <p class="project-desc">Colecta de víveres y ropas para las familias de Yukuty con apoyo de escuela Arasy, el grupo 4x4 y toda la comunidad de Barrio Kennedy en período de inundación.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #8b5cf6, #6d28d9);">
+                    <img src="image/proyecto_cumpliendo_sueno.jpg" alt="Proyecto Cumpliendo el Sueño" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #f5f3ff; color: #6d28d9;">👑</div>
+                        <span class="project-tag">INTEGRACIÓN SOCIAL</span>
+                        <h4 class="project-title">Proyecto Cumpliendo el Sueño</h4>
+                        <p class="project-desc">Festejo de 15 años a 5 jovencitas con el apoyo de artistas nacionales del momento (Que Loco, Contramano, DJ-Rata, Las Culisueltas y Monchi Papa).</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #ef4444, #dc2626);">
+                    <img src="image/proyecto_bomberos.jpg" alt="Proyecto Bomberos por un Día" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #fef2f2; color: #dc2626;">👨‍🚒</div>
+                        <span class="project-tag">APOYO PEDAGÓGICO</span>
+                        <h4 class="project-title">Proyecto Bomberos por un Día</h4>
+                        <p class="project-desc">Apoyando el área pedagógica de la escuela y llevando a los Bomberos a Instituciones educativas.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #3b82f6, #2563eb);">
+                    <img src="image/proyecto_vida_sana.jpg" alt="Proyecto Vida Sana" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #eff6ff; color: #2563eb;">🩺</div>
+                        <span class="project-tag">SALUD Y ASISTENCIA</span>
+                        <h4 class="project-title">Proyecto Vida Sana</h4>
+                        <p class="project-desc">Realizando actividades para juntar fondos para un niño con cáncer, inspección médica por especialistas en instituciones previa a actividades físicas, servicio de peluquería y ayuda social en tratamientos.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #84cc16, #65a30d);">
+                    <img src="image/proyecto_equinoterapia.jpg" alt="Apoyo para la Rehabilitación: Equinoterapia" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #f7fee7; color: #65a30d;">🐴</div>
+                        <span class="project-tag">REHABILITACIÓN</span>
+                        <h4 class="project-title">Apoyo para la Rehabilitación: Equinoterapia</h4>
+                        <p class="project-desc">Apoyo continuo para la rehabilitación física, motriz y emocional a través de la terapia asistida con caballos (Equinoterapia).</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="--card-accent: linear-gradient(90deg, #f43f5e, #e11d48);">
+                    <img src="image/proyecto_semana_nino.jpg" alt="Proyecto Semana del Niño" class="project-img">
+                    <div class="project-content">
+                        <div class="project-icon-box" style="--icon-bg: #fff1f2; color: #e11d48;">🎈</div>
+                        <span class="project-tag">FESTIVIDAD INFANTIL</span>
+                        <h4 class="project-title">Proyecto Semana del Niño - Días de Sonrisas</h4>
+                        <p class="project-desc">Jornadas festivas con apoyo de universidades, show del Tío José, Globo Loco, Municipalidad, Bomberos y muchísimos amigos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería de Imágenes Locales -->
+    <section id="galeria" class="section-alt">
+        <div class="section-container">
+            <div class="section-header-center">
+                <span class="section-tag">REGISTRO FOTOGRÁFICO LOCAL</span>
+                <h2 class="section-title">Galería de Impacto Social</h2>
+                <p class="section-desc">Imágenes guardadas en la carpeta del proyecto (image/) listas para ser reemplazadas progresivamente.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="image/galeria_1.jpg" alt="Jornada Comunitaria">
+                    <div class="gallery-overlay">Jornadas de Integración Comunitaria</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image/galeria_2.jpg" alt="Talleres Educativos">
+                    <div class="gallery-overlay">Talleres Formativos e Infantiles</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image/galeria_3.jpg" alt="Acción Social">
+                    <div class="gallery-overlay">Proyectos de Inclusión Social</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image/galeria_4.jpg" alt="Arte Urbano">
+                    <div class="gallery-overlay">Encuentros de Arte y Pintura</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image/galeria_5.jpg" alt="Capacitación">
+                    <div class="gallery-overlay">Capacitación a Emprendedores</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image/galeria_6.jpg" alt="Artesanía">
+                    <div class="gallery-overlay">Feria de Artesanías y Talentos</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Sección Transparencia & Credibilidad Institucional -->
-    <section id="transparencia" class="section-alt">
+    <section id="transparencia">
         <div class="section-container">
             <div class="section-header-center">
                 <span class="section-tag">RESPALDO LEGAL Y FISCAL</span>
@@ -1017,7 +1223,7 @@
     </section>
 
     <!-- Sección Alianzas y Comunidad -->
-    <section id="alianzas">
+    <section id="alianzas" class="section-alt">
         <div class="section-container">
             <div class="section-header-center">
                 <span class="section-tag">ALIANZAS Y COMUNIDAD</span>
@@ -1038,7 +1244,7 @@
     </section>
 
     <!-- Sección Contacto & Geolocalización -->
-    <section id="contacto" class="section-alt">
+    <section id="contacto">
         <div class="section-container">
             <div class="section-header-center">
                 <span class="section-tag">ENCUÉNTRANOS EN...</span>
