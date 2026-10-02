@@ -36,7 +36,99 @@
             --radius-lg: 20px;
             --radius-md: 12px;
             --radius-sm: 8px;
-            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* =========================================================
+           ANIMACIONES Y TRANSICIONES MODERNAS (MODERN UI TRANSITIONS)
+           ========================================================= */
+        a, button, input, select, textarea {
+            transition: var(--transition-smooth);
+        }
+
+        /* Revelación suave al hacer Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Hover 3D en Tarjetas y Bloques */
+        .map-info-pane, .contact-info-box, .contact-form-box, .seal-box, .stat-card, .program-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+        }
+
+        .map-info-pane:hover, .contact-info-box:hover, .contact-form-box:hover, .seal-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        /* Destello Shimmer en Botones */
+        .btn-hero-primary {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        }
+
+        .btn-hero-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transform: skewX(-20deg);
+            transition: none;
+        }
+
+        .btn-hero-primary:hover::after {
+            left: 200%;
+            transition: left 0.8s ease-in-out;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -6px rgba(45, 106, 79, 0.4);
         }
 
         [data-theme="dark"] {
@@ -1169,7 +1261,7 @@
 
             <div class="hero-card-widget">
                 <div class="hero-card-header">
-                    <img src="sello_institucional.png" alt="Sello Dorado Oficial">
+                    <img src="logo_espacio_de_vida.png" alt="Sello Dorado Oficial">
                     <div class="hero-card-info">
                         <h3>Fundación Espacio de Vida</h3>
                         <p>Decreto N° 1913/2014 &bull; Lambaré, Paraguay</p>
@@ -1452,7 +1544,7 @@
                 </div>
 
                 <div class="seal-box">
-                    <img src="sello_institucional.png" alt="Sello Dorado Oficial">
+                    <img src="logo_espacio_de_vida.png" alt="Sello Dorado Oficial">
                     <h4 style="color: var(--gold); font-size: 16px; font-weight: 800; text-transform: uppercase;">Sello Oficial de Respaldación</h4>
                     <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Emitido bajo el Decreto N° 1913/2014 &bull; RUC 80087692-0 &bull; Válido para deducción impositiva en balances tributarios.</p>
                 </div>
@@ -1654,6 +1746,27 @@
             document.getElementById('calc-deductible').innerText = 'Gs. ' + deductible.toLocaleString('es-PY');
             document.getElementById('calc-savings').innerText = 'Gs. ' + savings.toLocaleString('es-PY');
         }
+
+        // Animación Scroll Reveal Moderna con IntersectionObserver
+        document.addEventListener('DOMContentLoaded', () => {
+            const targets = document.querySelectorAll('section, .contact-info-box, .contact-form-box, .map-section-direct, .seal-box, .program-card, .stat-card');
+            
+            targets.forEach(el => {
+                if (!el.classList.contains('reveal') && !el.classList.contains('reveal-left') && !el.classList.contains('reveal-right') && !el.classList.contains('reveal-scale')) {
+                    el.classList.add('reveal');
+                }
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
