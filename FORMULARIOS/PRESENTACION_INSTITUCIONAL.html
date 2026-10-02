@@ -1460,59 +1460,16 @@
         </div>
     </section>
 
-    <!-- MAPA INTERACTIVO DIRECTO VISIBLE "DE UNA" -->
-    <section id="mapa" class="section-alt">
-        <div class="section-container">
-            <div class="section-header-center">
-                <span class="section-tag">GEOLOCALIZACIÓN DIRECTA</span>
-                <h2 class="section-title">Ubicación & Mapa Interactivo</h2>
-                <p class="section-desc">Sede Oficial de la Fundación Espacio de Vida en Lambaré, Paraguay. Mapa interactivo en vivo centrado en las coordenadas exactas de la institución.</p>
-            </div>
-
-            <div class="map-section-direct">
-                <div class="map-grid-direct">
-                    <div class="map-info-pane">
-                        <div>
-                            <span style="font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.8px;">PARAGUAY &bull; DEPARTAMENTO CENTRAL</span>
-                            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-heading); margin: 8px 0 14px 0;">Sede Institucional</h3>
-                            <p style="font-size: 14px; color: var(--text-body); line-height: 1.65; margin-bottom: 20px;">
-                                📍 <strong>Dirección:</strong> Capitán Figari c/ Piribebuy 643, Barrio Kennedy, Lambaré, Paraguay.<br>
-                                🏛️ <strong>Ubicación:</strong> Distrito Lambaré &bull; Depto. Central<br>
-                                🗺️ <strong>Coordenadas GPS:</strong> -25.347093, -57.635810<br>
-                                🏛️ <strong>RUC:</strong> 80087692-0 &bull; Decreto N° 1913/2014
-                            </p>
-                        </div>
-                        <div>
-                            <a href="https://www.google.com/maps?q=-25.347093450033267,-57.63581040164236" target="_blank" class="btn-hero-primary" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; text-align: center; gap: 8px; font-size: 13.5px; padding: 12px 20px;">
-                                Abrir GPS en Google Maps 📍 ↗
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- IFRAME MAPA EN VIVO VISIBLE "DE UNA" -->
-                    <div class="map-iframe-box">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=-25.347093450033267,-57.63581040164236&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección 7: Contacto Directo -->
-    <section id="contacto">
+    <!-- SECCIÓN UNIFICADA: UBICACIÓN, MAPA Y CONTACTO -->
+    <section id="contacto" class="section-alt">
         <div class="section-container">
             <div class="section-header-center">
                 <span class="section-tag">ESTAMOS PARA ATENDERTE</span>
-                <h2 class="section-title">Contáctanos</h2>
-                <p class="section-desc">Déjanos tus datos de contacto para mayor información sobre nuestros programas o alianzas estratégicas.</p>
+                <h2 class="section-title">Ubicación & Contacto Directo</h2>
+                <p class="section-desc">Sede Oficial de la Fundación Espacio de Vida en Lambaré, Paraguay. Mapa interactivo en vivo, información institucional y formulario de contacto.</p>
             </div>
 
-            <div class="contact-grid">
+            <div class="contact-grid" style="margin-bottom: 30px;">
                 <div class="contact-info-box">
                     <div>
                         <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #ffffff;">Fundación Espacio de Vida</h3>
@@ -1592,6 +1549,29 @@
 
                         <button type="submit" class="btn-hero-primary" style="width: 100%; text-align: center; justify-content: center;">Enviar Mensaje Directo 🚀</button>
                     </form>
+                </div>
+            </div>
+
+            <!-- MAPA INTERACTIVO GPS INTEGRADO UNIFICADO -->
+            <div id="mapa" class="map-section-direct">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <span style="font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.8px;">GEOLOCALIZACIÓN EN VIVO</span>
+                        <h4 style="font-size: 18px; font-weight: 800; color: var(--text-heading); margin: 2px 0 0 0;">Coordenadas GPS: -25.347093, -57.635810</h4>
+                    </div>
+                    <div>
+                        <a href="https://www.google.com/maps?q=-25.347093450033267,-57.63581040164236" target="_blank" class="btn-hero-primary" style="font-size: 13px; padding: 10px 18px;">
+                            Abrir GPS en Google Maps 📍 ↗
+                        </a>
+                    </div>
+                </div>
+                <div class="map-iframe-box" style="height: 350px;">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=-25.347093450033267,-57.63581040164236&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
